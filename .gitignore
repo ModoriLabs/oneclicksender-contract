@@ -16,3 +16,7 @@ yarn.lock
 !broadcast
 broadcast/*
 broadcast/*/31337/
+
+# hardhat
+cache_hardhat/
+artifacts/
