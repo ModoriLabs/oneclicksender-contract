@@ -2,7 +2,7 @@
 pragma solidity 0.8.23;
 
 import { AccessControlUpgradeable } from "@openzeppelin/contracts-upgradeable/access/AccessControlUpgradeable.sol";
-import {UUPSUpgradeable} from "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
+import { UUPSUpgradeable } from "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
 
 abstract contract UpgradeableBase is AccessControlUpgradeable, UUPSUpgradeable {
     error NotManager();

@@ -4,30 +4,20 @@ pragma solidity 0.8.23;
 import { UpgradeableBase } from "./UpgradeableBase.sol";
 import { IERC20 } from "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 
-contract ERC20BatchSender is UpgradeableBase  {
+contract ERC20BatchSender is UpgradeableBase {
     uint256 public constant COST = 0.0001 ether; // FIXME: 0.0001 is for testnet only
 
     error InsufficientCost();
 
-    event BatchSend(
-        address indexed token,
-        address[] accounts,
-        uint256[] amounts
-    );
+    event BatchSend(address indexed token, address[] accounts, uint256[] amounts);
 
-    event ERC20TokenWithdrawn(
-        IERC20 _token,
-        address _recipient,
-        uint256 _value
-    );
+    event ERC20TokenWithdrawn(IERC20 _token, address _recipient, uint256 _value);
 
     constructor() {
         _disableInitializers();
     }
 
-    function initialize(
-        address manager
-    ) public initializer {
+    function initialize(address manager) public initializer {
         __UpgradeableBase_init(_msgSender());
         _grantManagerRole(manager);
     }
@@ -52,15 +42,24 @@ contract ERC20BatchSender is UpgradeableBase  {
     }
 
     /**
-      * Allows the owner of the contract to withdraw any funds that may reside on the contract address.
-      * */
-    function withdrawFunds(address _recipient) public onlyManager returns(bool success) {
-        (bool sent, ) = payable(_recipient).call { value: address(this).balance }("");
-        require (sent, "Failed to send Ether");
+     * Allows the owner of the contract to withdraw any funds that may reside on the contract address.
+     *
+     */
+    function withdrawFunds(address _recipient) public onlyManager returns (bool success) {
+        (bool sent,) = payable(_recipient).call{ value: address(this).balance }("");
+        require(sent, "Failed to send Ether");
         return true;
     }
 
-    function withdrawERC20Token(IERC20 _token,  address _recipient, uint256 _value) public onlyManager returns(bool success) {
+    function withdrawERC20Token(
+        IERC20 _token,
+        address _recipient,
+        uint256 _value
+    )
+        public
+        onlyManager
+        returns (bool success)
+    {
         IERC20 token = IERC20(_token);
         token.transfer(_recipient, _value);
 
