@@ -45,13 +45,13 @@ contract ERC20BatchSender is UpgradeableBase {
      * Allows the owner of the contract to withdraw any funds that may reside on the contract address.
      *
      */
-    function withdrawFunds(address _recipient) public onlyManager returns (bool success) {
+    function withdrawETH(address _recipient) public onlyManager returns (bool success) {
         (bool sent,) = payable(_recipient).call{ value: address(this).balance }("");
         require(sent, "Failed to send Ether");
         return true;
     }
 
-    function withdrawERC20Token(
+    function withdrawERC20(
         IERC20 _token,
         address _recipient,
         uint256 _value

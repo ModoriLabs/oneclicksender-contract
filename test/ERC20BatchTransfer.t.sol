@@ -32,6 +32,16 @@ contract ERC20BatchTransferTest is PRBTest, StdCheats {
     }
 
     function test_RevertWhen_Send_WithInsufficientCost() external {
+        address[] memory recipients = new address[](2);
+        recipients[0] = ALICE;
+        recipients[1] = BOB;
+
+        uint256[] memory amounts = new uint256[](2);
+        amounts[0] = 100;
+        amounts[1] = 200;
+
+        vm.expectRevert(abi.encodeWithSignature("InsufficientCost()"));
+        batchSender.send { value: 1 }(token, recipients, amounts);
     }
 
     function test_Send() external {
@@ -53,11 +63,28 @@ contract ERC20BatchTransferTest is PRBTest, StdCheats {
     }
 
     function test_RevertWhen_Withdraw_ByNonManager() external {
-
+        vm.expectRevert(abi.encodeWithSignature("NotManager()"));
+        batchSender.withdrawETH(address(this));
     }
 
-    function test_RevertWhen_WithdrawERC20Token() external {
+    function test_Withdraw() external {
+        deal(address(batchSender), 100);
+        vm.prank(MANAGER);
+        batchSender.withdrawETH(ALICE);
+        assertEq(ALICE.balance, 100);
+    }
 
+    function test_RevertWhen_WithdrawERC20() external {
+        vm.expectRevert(abi.encodeWithSignature("NotManager()"));
+        batchSender.withdrawERC20(token, address(this), 100);
+    }
+
+    function test_WithdrawERC20() external {
+        token.mint(address(batchSender), 1000);
+
+        vm.prank(MANAGER);
+        batchSender.withdrawERC20(token, address(this), 100);
+        assertEq(token.balanceOf(address(this)), 100);
     }
 
     function _faucet(address _recipient, uint256 _amount) private {
