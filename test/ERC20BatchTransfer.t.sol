@@ -41,7 +41,7 @@ contract ERC20BatchTransferTest is PRBTest, StdCheats {
         amounts[1] = 200;
 
         vm.expectRevert(abi.encodeWithSignature("InsufficientCost()"));
-        batchSender.send { value: 1 }(token, recipients, amounts);
+        batchSender.send{ value: 1 }(token, recipients, amounts);
     }
 
     function test_Send() external {
@@ -59,7 +59,7 @@ contract ERC20BatchTransferTest is PRBTest, StdCheats {
         amounts[0] = 100;
         amounts[1] = 200;
 
-        batchSender.send { value: cost }(token, recipients, amounts);
+        batchSender.send{ value: cost }(token, recipients, amounts);
     }
 
     function test_RevertWhen_Withdraw_ByNonManager() external {
