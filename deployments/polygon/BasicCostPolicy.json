@@ -1,0 +1,367 @@
+{
+  "address": "0xFcD58eCDfbB46ca31514C30ea996B17AC21778b3",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "initialOwner",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_oneTimeFee",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "_perUserFee",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "owner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnableInvalidOwner",
+      "type": "error"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "OwnableUnauthorizedAccount",
+      "type": "error"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_oneTimeFee",
+          "type": "uint256"
+        }
+      ],
+      "name": "OneTimeFeeUpdated",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferStarted",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "previousOwner",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "OwnershipTransferred",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "_perUserFee",
+          "type": "uint256"
+        }
+      ],
+      "name": "PerUserFeeUpdated",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "acceptOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "sender",
+          "type": "address"
+        },
+        {
+          "internalType": "uint256",
+          "name": "userCount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "totalAmount",
+          "type": "uint256"
+        },
+        {
+          "internalType": "uint256",
+          "name": "typeId",
+          "type": "uint256"
+        }
+      ],
+      "name": "calculateCost",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "cost",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "pendingOwner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "renounceOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_oneTimeFee",
+          "type": "uint256"
+        }
+      ],
+      "name": "setOneTimeFee",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "_perUserFee",
+          "type": "uint256"
+        }
+      ],
+      "name": "setPerUserFee",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newOwner",
+          "type": "address"
+        }
+      ],
+      "name": "transferOwnership",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "transactionHash": "0x5e249a63c11464e64246a771c2f9251a09f9224303e127c3752fe3b2e4962344",
+  "receipt": {
+    "to": null,
+    "from": "0x45129A8fe7Dee4e6E16E738be673984DA684371F",
+    "contractAddress": "0xFcD58eCDfbB46ca31514C30ea996B17AC21778b3",
+    "transactionIndex": 105,
+    "gasUsed": "357334",
+    "logsBloom": "0x00000000000000001020000010000000000000000000000000800000000000000000000004000000000000000000000000008000000000000000000000000000000000000000000000000000000000800001000000000000000100000000000000000000020010000000000000000800000000000000000080000000000000400000000000000000000000000000000000000000000000000000000000000000200000000000000000000000100000000000000000000000000000000000004000000000000000000001000000000000000000000000200000100000000020000000000000000400000000000000400000000000000000000000000000100000",
+    "blockHash": "0xd002baf37c01ab1d70fe08866b9fde38931b7dcec2ec251e949df9e57bd748d0",
+    "transactionHash": "0x5e249a63c11464e64246a771c2f9251a09f9224303e127c3752fe3b2e4962344",
+    "logs": [
+      {
+        "transactionIndex": 105,
+        "blockNumber": 52424581,
+        "transactionHash": "0x5e249a63c11464e64246a771c2f9251a09f9224303e127c3752fe3b2e4962344",
+        "address": "0xFcD58eCDfbB46ca31514C30ea996B17AC21778b3",
+        "topics": [
+          "0x8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e0",
+          "0x0000000000000000000000000000000000000000000000000000000000000000",
+          "0x00000000000000000000000045129a8fe7dee4e6e16e738be673984da684371f"
+        ],
+        "data": "0x",
+        "logIndex": 377,
+        "blockHash": "0xd002baf37c01ab1d70fe08866b9fde38931b7dcec2ec251e949df9e57bd748d0"
+      },
+      {
+        "transactionIndex": 105,
+        "blockNumber": 52424581,
+        "transactionHash": "0x5e249a63c11464e64246a771c2f9251a09f9224303e127c3752fe3b2e4962344",
+        "address": "0x0000000000000000000000000000000000001010",
+        "topics": [
+          "0x4dfe1bbbcf077ddc3e01291eea2d5c70c2b422b415d95645b9adcfd678cb1d63",
+          "0x0000000000000000000000000000000000000000000000000000000000001010",
+          "0x00000000000000000000000045129a8fe7dee4e6e16e738be673984da684371f",
+          "0x000000000000000000000000dc9456a5c94c65f26ae930e834e10693df744c9c"
+        ],
+        "data": "0x000000000000000000000000000000000000000000000000002903b02b09321c0000000000000000000000000000000000000000000000067757b00708980000000000000000000000000000000000000000000000000211843129f62705f80f000000000000000000000000000000000000000000000006772eac56dd8ecde4000000000000000000000000000000000000000000000211845a2da6520f2a2b",
+        "logIndex": 378,
+        "blockHash": "0xd002baf37c01ab1d70fe08866b9fde38931b7dcec2ec251e949df9e57bd748d0"
+      }
+    ],
+    "blockNumber": 52424581,
+    "cumulativeGasUsed": "17150984",
+    "status": 1,
+    "byzantium": true
+  },
+  "args": [
+    "0x45129A8fe7Dee4e6E16E738be673984DA684371F",
+    0,
+    0
+  ],
+  "numDeployments": 1,
+  "solcInputHash": "affb292b097d71e02b3cef166b6ef3b5",
+  "metadata": "{\"compiler\":{\"version\":\"0.8.23+commit.f704f362\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"initialOwner\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_oneTimeFee\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_perUserFee\",\"type\":\"uint256\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"}],\"name\":\"OwnableInvalidOwner\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"OwnableUnauthorizedAccount\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_oneTimeFee\",\"type\":\"uint256\"}],\"name\":\"OneTimeFeeUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferStarted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"previousOwner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"OwnershipTransferred\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_perUserFee\",\"type\":\"uint256\"}],\"name\":\"PerUserFeeUpdated\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"acceptOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"userCount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"totalAmount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"typeId\",\"type\":\"uint256\"}],\"name\":\"calculateCost\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"cost\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"owner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"pendingOwner\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"renounceOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_oneTimeFee\",\"type\":\"uint256\"}],\"name\":\"setOneTimeFee\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_perUserFee\",\"type\":\"uint256\"}],\"name\":\"setPerUserFee\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newOwner\",\"type\":\"address\"}],\"name\":\"transferOwnership\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"errors\":{\"OwnableInvalidOwner(address)\":[{\"details\":\"The owner is not a valid owner account. (eg. `address(0)`)\"}],\"OwnableUnauthorizedAccount(address)\":[{\"details\":\"The caller account is not authorized to perform an operation.\"}]},\"kind\":\"dev\",\"methods\":{\"acceptOwnership()\":{\"details\":\"The new owner accepts the ownership transfer.\"},\"owner()\":{\"details\":\"Returns the address of the current owner.\"},\"pendingOwner()\":{\"details\":\"Returns the address of the pending owner.\"},\"renounceOwnership()\":{\"details\":\"Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner.\"},\"transferOwnership(address)\":{\"details\":\"Starts the ownership transfer of the contract to a new account. Replaces the pending transfer if there is one. Can only be called by the current owner.\"}},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/BasicCostPolicy.sol\":\"BasicCostPolicy\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\",\"useLiteralContent\":true},\"optimizer\":{\"enabled\":true,\"runs\":1000},\"remappings\":[]},\"sources\":{\"@openzeppelin/contracts/access/Ownable.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v5.0.0) (access/Ownable.sol)\\n\\npragma solidity ^0.8.20;\\n\\nimport {Context} from \\\"../utils/Context.sol\\\";\\n\\n/**\\n * @dev Contract module which provides a basic access control mechanism, where\\n * there is an account (an owner) that can be granted exclusive access to\\n * specific functions.\\n *\\n * The initial owner is set to the address provided by the deployer. This can\\n * later be changed with {transferOwnership}.\\n *\\n * This module is used through inheritance. It will make available the modifier\\n * `onlyOwner`, which can be applied to your functions to restrict their use to\\n * the owner.\\n */\\nabstract contract Ownable is Context {\\n    address private _owner;\\n\\n    /**\\n     * @dev The caller account is not authorized to perform an operation.\\n     */\\n    error OwnableUnauthorizedAccount(address account);\\n\\n    /**\\n     * @dev The owner is not a valid owner account. (eg. `address(0)`)\\n     */\\n    error OwnableInvalidOwner(address owner);\\n\\n    event OwnershipTransferred(address indexed previousOwner, address indexed newOwner);\\n\\n    /**\\n     * @dev Initializes the contract setting the address provided by the deployer as the initial owner.\\n     */\\n    constructor(address initialOwner) {\\n        if (initialOwner == address(0)) {\\n            revert OwnableInvalidOwner(address(0));\\n        }\\n        _transferOwnership(initialOwner);\\n    }\\n\\n    /**\\n     * @dev Throws if called by any account other than the owner.\\n     */\\n    modifier onlyOwner() {\\n        _checkOwner();\\n        _;\\n    }\\n\\n    /**\\n     * @dev Returns the address of the current owner.\\n     */\\n    function owner() public view virtual returns (address) {\\n        return _owner;\\n    }\\n\\n    /**\\n     * @dev Throws if the sender is not the owner.\\n     */\\n    function _checkOwner() internal view virtual {\\n        if (owner() != _msgSender()) {\\n            revert OwnableUnauthorizedAccount(_msgSender());\\n        }\\n    }\\n\\n    /**\\n     * @dev Leaves the contract without owner. It will not be possible to call\\n     * `onlyOwner` functions. Can only be called by the current owner.\\n     *\\n     * NOTE: Renouncing ownership will leave the contract without an owner,\\n     * thereby disabling any functionality that is only available to the owner.\\n     */\\n    function renounceOwnership() public virtual onlyOwner {\\n        _transferOwnership(address(0));\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Can only be called by the current owner.\\n     */\\n    function transferOwnership(address newOwner) public virtual onlyOwner {\\n        if (newOwner == address(0)) {\\n            revert OwnableInvalidOwner(address(0));\\n        }\\n        _transferOwnership(newOwner);\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`).\\n     * Internal function without access restriction.\\n     */\\n    function _transferOwnership(address newOwner) internal virtual {\\n        address oldOwner = _owner;\\n        _owner = newOwner;\\n        emit OwnershipTransferred(oldOwner, newOwner);\\n    }\\n}\\n\",\"keccak256\":\"0xff6d0bb2e285473e5311d9d3caacb525ae3538a80758c10649a4d61029b017bb\",\"license\":\"MIT\"},\"@openzeppelin/contracts/access/Ownable2Step.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v5.0.0) (access/Ownable2Step.sol)\\n\\npragma solidity ^0.8.20;\\n\\nimport {Ownable} from \\\"./Ownable.sol\\\";\\n\\n/**\\n * @dev Contract module which provides access control mechanism, where\\n * there is an account (an owner) that can be granted exclusive access to\\n * specific functions.\\n *\\n * The initial owner is specified at deployment time in the constructor for `Ownable`. This\\n * can later be changed with {transferOwnership} and {acceptOwnership}.\\n *\\n * This module is used through inheritance. It will make available all functions\\n * from parent (Ownable).\\n */\\nabstract contract Ownable2Step is Ownable {\\n    address private _pendingOwner;\\n\\n    event OwnershipTransferStarted(address indexed previousOwner, address indexed newOwner);\\n\\n    /**\\n     * @dev Returns the address of the pending owner.\\n     */\\n    function pendingOwner() public view virtual returns (address) {\\n        return _pendingOwner;\\n    }\\n\\n    /**\\n     * @dev Starts the ownership transfer of the contract to a new account. Replaces the pending transfer if there is one.\\n     * Can only be called by the current owner.\\n     */\\n    function transferOwnership(address newOwner) public virtual override onlyOwner {\\n        _pendingOwner = newOwner;\\n        emit OwnershipTransferStarted(owner(), newOwner);\\n    }\\n\\n    /**\\n     * @dev Transfers ownership of the contract to a new account (`newOwner`) and deletes any pending owner.\\n     * Internal function without access restriction.\\n     */\\n    function _transferOwnership(address newOwner) internal virtual override {\\n        delete _pendingOwner;\\n        super._transferOwnership(newOwner);\\n    }\\n\\n    /**\\n     * @dev The new owner accepts the ownership transfer.\\n     */\\n    function acceptOwnership() public virtual {\\n        address sender = _msgSender();\\n        if (pendingOwner() != sender) {\\n            revert OwnableUnauthorizedAccount(sender);\\n        }\\n        _transferOwnership(sender);\\n    }\\n}\\n\",\"keccak256\":\"0x5d3e5de9eadfa1f8a892eb2e95bbebd3e4b8c8ada5b76f104d383fea518fa688\",\"license\":\"MIT\"},\"@openzeppelin/contracts/utils/Context.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\n// OpenZeppelin Contracts (last updated v5.0.0) (utils/Context.sol)\\n\\npragma solidity ^0.8.20;\\n\\n/**\\n * @dev Provides information about the current execution context, including the\\n * sender of the transaction and its data. While these are generally available\\n * via msg.sender and msg.data, they should not be accessed in such a direct\\n * manner, since when dealing with meta-transactions the account sending and\\n * paying for execution may not be the actual sender (as far as an application\\n * is concerned).\\n *\\n * This contract is only required for intermediate, library-like contracts.\\n */\\nabstract contract Context {\\n    function _msgSender() internal view virtual returns (address) {\\n        return msg.sender;\\n    }\\n\\n    function _msgData() internal view virtual returns (bytes calldata) {\\n        return msg.data;\\n    }\\n}\\n\",\"keccak256\":\"0x75a4ee64c68dbd5f38bddd06e664a64c8271b4caa554fb6f0607dfd672bb4bf3\",\"license\":\"MIT\"},\"src/BasicCostPolicy.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.23;\\n\\nimport {ICostPolicy} from \\\"./interfaces/ICostPolicy.sol\\\";\\nimport {Ownable} from \\\"@openzeppelin/contracts/access/Ownable.sol\\\";\\nimport {Ownable2Step} from \\\"@openzeppelin/contracts/access/Ownable2Step.sol\\\";\\n\\ncontract BasicCostPolicy is ICostPolicy, Ownable2Step {\\n    uint256 private oneTimeFee;\\n    uint256 private perUserFee;\\n\\n    event OneTimeFeeUpdated(uint256 _oneTimeFee);\\n    event PerUserFeeUpdated(uint256 _perUserFee);\\n\\n    constructor(address initialOwner, uint256 _oneTimeFee, uint256 _perUserFee) Ownable(initialOwner) {\\n        oneTimeFee = _oneTimeFee;\\n        perUserFee = _perUserFee;\\n    }\\n\\n    function calculateCost(address sender, uint256 userCount, uint256 totalAmount, uint256 typeId) external view returns (uint256 cost) {\\n        if (typeId == 0) {\\n            cost = oneTimeFee;\\n        } else if (typeId == 1) {\\n            cost = perUserFee * userCount;\\n        } else {\\n            revert(\\\"Invalid typeId\\\");\\n        }\\n    }\\n\\n    function setOneTimeFee(uint256 _oneTimeFee) external onlyOwner {\\n        oneTimeFee = _oneTimeFee;\\n        emit OneTimeFeeUpdated(_oneTimeFee);\\n    }\\n\\n    function setPerUserFee(uint256 _perUserFee) external onlyOwner {\\n        perUserFee = _perUserFee;\\n        emit PerUserFeeUpdated(_perUserFee);\\n    }\\n}\\n\",\"keccak256\":\"0x33721dd7cc5fa7e0a9ad6ec39153d62f499fec38544381c4aac5dea45379ed73\",\"license\":\"MIT\"},\"src/interfaces/ICostPolicy.sol\":{\"content\":\"// SPDX-License-Identifier: MIT\\npragma solidity 0.8.23;\\n\\ninterface ICostPolicy {\\n    function calculateCost(address sender, uint256 userCount, uint256 totalAmount, uint256 typeId) external view returns (uint256 cost);\\n}\\n\",\"keccak256\":\"0xdda3593043311d910995767eabf9b1cce9bc57df58de58b30e3c374ae1e30388\",\"license\":\"MIT\"}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5060405161061438038061061483398101604081905261002f916100e3565b826001600160a01b03811661005e57604051631e4fbdf760e01b81526000600482015260240160405180910390fd5b61006781610077565b5060029190915560035550610126565b600180546001600160a01b031916905561009081610093565b50565b600080546001600160a01b038381166001600160a01b0319831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b6000806000606084860312156100f857600080fd5b83516001600160a01b038116811461010f57600080fd5b602085015160409095015190969495509392505050565b6104df806101356000396000f3fe608060405234801561001057600080fd5b50600436106100885760003560e01c80638da5cb5b1161005b5780638da5cb5b146100d8578063e1ba2426146100fd578063e30c397814610110578063f2fde38b1461012157600080fd5b80635288d9451461008d578063715018a6146100b3578063748ddfc0146100bd57806379ba5097146100d0575b600080fd5b6100a061009b3660046103f1565b610134565b6040519081526020015b60405180910390f35b6100bb6101d3565b005b6100bb6100cb36600461042a565b6101e7565b6100bb61022b565b6000546001600160a01b03165b6040516001600160a01b0390911681526020016100aa565b6100bb61010b36600461042a565b61026f565b6001546001600160a01b03166100e5565b6100bb61012f366004610443565b6102ac565b60008160000361014757506002546101cb565b81600103610164578360035461015d9190610465565b90506101cb565b6040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600e60248201527f496e76616c69642074797065496400000000000000000000000000000000000060448201526064015b60405180910390fd5b949350505050565b6101db61032a565b6101e56000610357565b565b6101ef61032a565b60038190556040518181527fe4e9d0c42d8ff6bd519be0e8fd05d3d4748e8652fe9de147829fcf629ecb036e906020015b60405180910390a150565b60015433906001600160a01b031681146102635760405163118cdaa760e01b81526001600160a01b03821660048201526024016101c2565b61026c81610357565b50565b61027761032a565b60028190556040518181527f65e483827ee434bd81785823d46bdf2d3ce181aa289de8108eeeee22b207f50f90602001610220565b6102b461032a565b600180546001600160a01b03831673ffffffffffffffffffffffffffffffffffffffff1990911681179091556102f26000546001600160a01b031690565b6001600160a01b03167f38d16b8cac22d99fc7c124b9cd0de2d3fa1faef420bfe791d8c362d765e2270060405160405180910390a350565b6000546001600160a01b031633146101e55760405163118cdaa760e01b81523360048201526024016101c2565b6001805473ffffffffffffffffffffffffffffffffffffffff1916905561026c81600080546001600160a01b0383811673ffffffffffffffffffffffffffffffffffffffff19831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b80356001600160a01b03811681146103ec57600080fd5b919050565b6000806000806080858703121561040757600080fd5b610410856103d5565b966020860135965060408601359560600135945092505050565b60006020828403121561043c57600080fd5b5035919050565b60006020828403121561045557600080fd5b61045e826103d5565b9392505050565b80820281158282048414176104a3577f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b9291505056fea26469706673582212203d5d00f291d702b583e5b5479a00fdd716da51aaf3251c942923d7c38f69b49264736f6c63430008170033",
+  "deployedBytecode": "0x608060405234801561001057600080fd5b50600436106100885760003560e01c80638da5cb5b1161005b5780638da5cb5b146100d8578063e1ba2426146100fd578063e30c397814610110578063f2fde38b1461012157600080fd5b80635288d9451461008d578063715018a6146100b3578063748ddfc0146100bd57806379ba5097146100d0575b600080fd5b6100a061009b3660046103f1565b610134565b6040519081526020015b60405180910390f35b6100bb6101d3565b005b6100bb6100cb36600461042a565b6101e7565b6100bb61022b565b6000546001600160a01b03165b6040516001600160a01b0390911681526020016100aa565b6100bb61010b36600461042a565b61026f565b6001546001600160a01b03166100e5565b6100bb61012f366004610443565b6102ac565b60008160000361014757506002546101cb565b81600103610164578360035461015d9190610465565b90506101cb565b6040517f08c379a000000000000000000000000000000000000000000000000000000000815260206004820152600e60248201527f496e76616c69642074797065496400000000000000000000000000000000000060448201526064015b60405180910390fd5b949350505050565b6101db61032a565b6101e56000610357565b565b6101ef61032a565b60038190556040518181527fe4e9d0c42d8ff6bd519be0e8fd05d3d4748e8652fe9de147829fcf629ecb036e906020015b60405180910390a150565b60015433906001600160a01b031681146102635760405163118cdaa760e01b81526001600160a01b03821660048201526024016101c2565b61026c81610357565b50565b61027761032a565b60028190556040518181527f65e483827ee434bd81785823d46bdf2d3ce181aa289de8108eeeee22b207f50f90602001610220565b6102b461032a565b600180546001600160a01b03831673ffffffffffffffffffffffffffffffffffffffff1990911681179091556102f26000546001600160a01b031690565b6001600160a01b03167f38d16b8cac22d99fc7c124b9cd0de2d3fa1faef420bfe791d8c362d765e2270060405160405180910390a350565b6000546001600160a01b031633146101e55760405163118cdaa760e01b81523360048201526024016101c2565b6001805473ffffffffffffffffffffffffffffffffffffffff1916905561026c81600080546001600160a01b0383811673ffffffffffffffffffffffffffffffffffffffff19831681178455604051919092169283917f8be0079c531659141344cd1fd0a4f28419497f9722a3daafe3b4186f6b6457e09190a35050565b80356001600160a01b03811681146103ec57600080fd5b919050565b6000806000806080858703121561040757600080fd5b610410856103d5565b966020860135965060408601359560600135945092505050565b60006020828403121561043c57600080fd5b5035919050565b60006020828403121561045557600080fd5b61045e826103d5565b9392505050565b80820281158282048414176104a3577f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b9291505056fea26469706673582212203d5d00f291d702b583e5b5479a00fdd716da51aaf3251c942923d7c38f69b49264736f6c63430008170033",
+  "devdoc": {
+    "errors": {
+      "OwnableInvalidOwner(address)": [
+        {
+          "details": "The owner is not a valid owner account. (eg. `address(0)`)"
+        }
+      ],
+      "OwnableUnauthorizedAccount(address)": [
+        {
+          "details": "The caller account is not authorized to perform an operation."
+        }
+      ]
+    },
+    "kind": "dev",
+    "methods": {
+      "acceptOwnership()": {
+        "details": "The new owner accepts the ownership transfer."
+      },
+      "owner()": {
+        "details": "Returns the address of the current owner."
+      },
+      "pendingOwner()": {
+        "details": "Returns the address of the pending owner."
+      },
+      "renounceOwnership()": {
+        "details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
+      },
+      "transferOwnership(address)": {
+        "details": "Starts the ownership transfer of the contract to a new account. Replaces the pending transfer if there is one. Can only be called by the current owner."
+      }
+    },
+    "version": 1
+  },
+  "userdoc": {
+    "kind": "user",
+    "methods": {},
+    "version": 1
+  },
+  "storageLayout": {
+    "storage": [
+      {
+        "astId": 968,
+        "contract": "src/BasicCostPolicy.sol:BasicCostPolicy",
+        "label": "_owner",
+        "offset": 0,
+        "slot": "0",
+        "type": "t_address"
+      },
+      {
+        "astId": 1116,
+        "contract": "src/BasicCostPolicy.sol:BasicCostPolicy",
+        "label": "_pendingOwner",
+        "offset": 0,
+        "slot": "1",
+        "type": "t_address"
+      },
+      {
+        "astId": 3009,
+        "contract": "src/BasicCostPolicy.sol:BasicCostPolicy",
+        "label": "oneTimeFee",
+        "offset": 0,
+        "slot": "2",
+        "type": "t_uint256"
+      },
+      {
+        "astId": 3011,
+        "contract": "src/BasicCostPolicy.sol:BasicCostPolicy",
+        "label": "perUserFee",
+        "offset": 0,
+        "slot": "3",
+        "type": "t_uint256"
+      }
+    ],
+    "types": {
+      "t_address": {
+        "encoding": "inplace",
+        "label": "address",
+        "numberOfBytes": "20"
+      },
+      "t_uint256": {
+        "encoding": "inplace",
+        "label": "uint256",
+        "numberOfBytes": "32"
+      }
+    }
+  }
+}

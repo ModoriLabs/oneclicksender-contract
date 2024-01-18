@@ -6,24 +6,13 @@ const deployFn: DeployFunction = async function (hre) {
   const { deployer} = await getNamedAccounts()
   console.log("deployer: ", deployer);
 
-  await deploy("ERC20BatchSender", {
+  await deploy("BasicCostPolicy", {
     from: deployer,
     log: true,
-    proxy: {
-      proxyContract: 'UUPS',
-      upgradeIndex: 0,
-      execute: {
-        init: {
-          methodName: 'initialize',
-          args: [
-            deployer
-          ],
-        },
-      }
-    }
+    args: [deployer, 0, 0],
   })
 }
 
-deployFn.tags = ["local", "testnet", "mainnet"]
+deployFn.tags = ["local", "testnet", "mainnet", "BasicCostPolicy"]
 
 export default deployFn

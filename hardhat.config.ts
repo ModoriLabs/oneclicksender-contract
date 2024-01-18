@@ -2,6 +2,7 @@ import * as dotenv from "dotenv"
 import "@nomicfoundation/hardhat-foundry";
 import "@nomicfoundation/hardhat-toolbox"
 import "hardhat-deploy"
+import "./tasks/distribute"
 
 dotenv.config()
 const TESTNET_MNEMONIC = process.env.TESTNET_MNEMONIC
@@ -37,13 +38,24 @@ const config = {
     mainnet: {
       url: `https://eth-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
       chainId: 1,
-      accounts: getAccounts(),
+      accounts: MAINNET_PRIVATE_KEY !== undefined ? [MAINNET_PRIVATE_KEY] : [],
     },
     sepolia: {
       url: `https://eth-sepolia.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
       chainId: 11155111,
       accounts: getAccounts(),
     },
+    polygon: {
+      url: `https://polygon-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
+      chainId: 137,
+      accounts: MAINNET_PRIVATE_KEY !== undefined ? [MAINNET_PRIVATE_KEY] : [],
+      gasPrice: 80000000000,
+    },
+    mumbai: {
+      url: `https://polygon-mumbai.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
+      chainId: 80001,
+      accounts: MAINNET_PRIVATE_KEY !== undefined ? [MAINNET_PRIVATE_KEY] : [],
+    }
   },
   etherscan: {
     apiKey: {
