@@ -25,7 +25,7 @@ const config = {
     settings: {
       optimizer: {
         enabled: true,
-        runs: 1000,
+        runs: 10000000,
       },
     },
   },
