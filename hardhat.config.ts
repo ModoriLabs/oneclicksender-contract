@@ -32,6 +32,10 @@ const config = {
   namedAccounts: {
     deployer: {
       default: 0,
+    },
+    feeRecipient: {
+      default: 0,
+      mainnet: "0x509477dc6AB2EE4eE42765A90420DA2c2CF2d165"
     }
   },
   networks: {

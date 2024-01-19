@@ -5,11 +5,14 @@ const deployFn: DeployFunction = async function (hre) {
   const { deploy } = deployments
   const { deployer} = await getNamedAccounts()
   console.log("deployer: ", deployer);
+  const oneTimeFee = hre.ethers.utils.parseEther("0.001")
+  const perUserFee = oneTimeFee;
+  const maxFreeUserCount = 10;
 
   await deploy("BasicCostPolicy", {
     from: deployer,
     log: true,
-    args: [deployer, 0, 0],
+    args: [deployer, oneTimeFee, perUserFee, maxFreeUserCount],
   })
 }
 

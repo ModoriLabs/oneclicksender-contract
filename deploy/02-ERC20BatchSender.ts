@@ -3,8 +3,8 @@ import { DeployFunction } from "hardhat-deploy/dist/types"
 const deployFn: DeployFunction = async function (hre) {
   const { deployments, getNamedAccounts } = hre
   const { deploy, get } = deployments
-  const { deployer} = await getNamedAccounts()
-  console.log("deployer: ", deployer);
+  const { deployer, feeRecipient} = await getNamedAccounts()
+  console.log(`deployer: ${deployer}, feeRecipient: ${feeRecipient}`);
   const basicCostPolicy = (await get("BasicCostPolicy")).address
   console.log("basicCostPolicy: ", basicCostPolicy);
 
@@ -13,7 +13,7 @@ const deployFn: DeployFunction = async function (hre) {
     log: true,
     proxy: {
       proxyContract: 'UUPS',
-      upgradeIndex: 0,
+      upgradeIndex: 1,
       upgradeFunction: {
         methodName: "upgradeToAndCall",
         upgradeArgs: ['{implementation}', '{data}']
@@ -24,22 +24,21 @@ const deployFn: DeployFunction = async function (hre) {
           args: [
             deployer,
             basicCostPolicy,
+            feeRecipient,
           ],
         },
-        /*
         onUpgrade: {
           methodName: 'reinitialize',
           args: [
-            deployer,
             basicCostPolicy,
+            feeRecipient,
           ],
         }
-         */
       }
     }
   })
 }
 
-deployFn.tags = ["local", "testnet", "mainnet"]
+deployFn.tags = ["local", "testnet", "mainnet", "ERC20BatchSender"]
 
 export default deployFn

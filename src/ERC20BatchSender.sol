@@ -9,6 +9,7 @@ import { SafeERC20 } from "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.s
 contract ERC20BatchSender is UpgradeableBase {
     address constant ETH_ADDRESS = 0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE;
     ICostPolicy public costPolicy;
+    address public feeRecipient;
 
     using SafeERC20 for IERC20;
 
@@ -17,15 +18,30 @@ contract ERC20BatchSender is UpgradeableBase {
 
     event BatchSend(address indexed token, address[] accounts, uint256[] amounts, uint256 typeId);
     event ERC20TokenWithdrawn(IERC20 _token, address _recipient, uint256 _value);
+    event CostPolicyUpdated(ICostPolicy _costPolicy);
+    event FeeRecipientUpdated(address _feeRecipient);
 
     constructor() {
         _disableInitializers();
     }
 
-    function initialize(address manager, ICostPolicy _costPolicy) public initializer {
+    function initialize(
+        address manager,
+        ICostPolicy _costPolicy,
+        address _feeRecipient
+    ) public initializer {
         __UpgradeableBase_init(_msgSender());
         _grantManagerRole(manager);
         costPolicy = _costPolicy;
+        feeRecipient = _feeRecipient;
+    }
+
+    function reinitialize(
+        ICostPolicy _costPolicy,
+        address _feeRecipient
+    ) public reinitializer(2) {
+        costPolicy = _costPolicy;
+        feeRecipient = _feeRecipient;
     }
 
     /// @notice send
@@ -48,6 +64,7 @@ contract ERC20BatchSender is UpgradeableBase {
         if (msg.value < cost) {
             revert InsufficientCost();
         }
+        _sendFee(cost);
 
         _token.safeTransferFrom(_msgSender(), address(this), _totalAmount);
         _send(_token, _accounts, _amounts, _typeId);
@@ -70,6 +87,8 @@ contract ERC20BatchSender is UpgradeableBase {
         if (msg.value < _totalAmount + cost) {
             revert InsufficientCost();
         }
+        _sendFee(cost);
+
         _sendETH(_accounts, _amounts, _typeId);
     }
 
@@ -94,9 +113,13 @@ contract ERC20BatchSender is UpgradeableBase {
         emit BatchSend(ETH_ADDRESS, _accounts, _amounts, _typeId);
     }
 
+    function _sendFee(uint256 amount) internal {
+        (bool success,) = feeRecipient.call{ value: amount }("");
+        require(success, "Transfer failed.");
+    }
+
     /**
-     * Allows the owner of the contract to withdraw any funds that may reside on the contract address.
-     *
+     * Allows the owner of the contract to withdraw ETH that may reside on the contract address.
      */
     function withdrawETH(address _recipient) public onlyManager returns (bool success) {
         (bool sent,) = payable(_recipient).call{ value: address(this).balance }("");
@@ -104,6 +127,9 @@ contract ERC20BatchSender is UpgradeableBase {
         return true;
     }
 
+    /**
+     * Allows the owner of the contract to withdraw any ERC20 that may reside on the contract address.
+     */
     function withdrawERC20(
         IERC20 _token,
         address _recipient,
@@ -118,5 +144,15 @@ contract ERC20BatchSender is UpgradeableBase {
 
         emit ERC20TokenWithdrawn(_token, _recipient, _value);
         return true;
+    }
+
+    function setFeeRecipient(address _feeRecipient) public onlyManager {
+        feeRecipient = _feeRecipient;
+        emit FeeRecipientUpdated(_feeRecipient);
+    }
+
+    function setCostPolicy(ICostPolicy _costPolicy) public onlyManager {
+        costPolicy = _costPolicy;
+        emit CostPolicyUpdated(_costPolicy);
     }
 }
