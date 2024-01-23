@@ -1,4 +1,5 @@
 import { DeployFunction } from "hardhat-deploy/dist/types"
+import { getChainId } from "hardhat";
 
 const deployFn: DeployFunction = async function (hre) {
   const { deployments, getNamedAccounts } = hre
@@ -8,12 +9,21 @@ const deployFn: DeployFunction = async function (hre) {
   const basicCostPolicy = (await get("BasicCostPolicy")).address
   console.log("basicCostPolicy: ", basicCostPolicy);
 
+  const chainId = await getChainId()
+  const getUpgradeIndex = () => {
+    if (chainId === "1") {
+      return 1
+    } else {
+      return 0
+    }
+  }
+
   await deploy("ERC20BatchSender", {
     from: deployer,
     log: true,
     proxy: {
       proxyContract: 'UUPS',
-      upgradeIndex: 1,
+      upgradeIndex: getUpgradeIndex(),
       upgradeFunction: {
         methodName: "upgradeToAndCall",
         upgradeArgs: ['{implementation}', '{data}']

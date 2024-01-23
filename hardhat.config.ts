@@ -10,6 +10,7 @@ const TESTNET_PRIVATE_KEY = process.env.TESTNET_PRIVATE_KEY
 const API_KEY_ALCHEMY = process.env.API_KEY_ALCHEMY
 const MAINNET_PRIVATE_KEY = process.env.MAINNET_PRIVATE_KEY
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY
+const BSCSCAN_API_KEY = process.env.BSCSCAN_API_KEY
 
 const getAccounts = () => {
   if (TESTNET_PRIVATE_KEY !== undefined) {
@@ -59,11 +60,24 @@ const config = {
       url: `https://polygon-mumbai.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
       chainId: 80001,
       accounts: MAINNET_PRIVATE_KEY !== undefined ? [MAINNET_PRIVATE_KEY] : [],
-    }
+    },
+    bsc: {
+      url: 'https://bsc-dataseed.binance.org',
+      chainId: 56,
+      accounts: MAINNET_PRIVATE_KEY !== undefined ? [MAINNET_PRIVATE_KEY] : [],
+      gasPrice: 3000000000,
+    },
+    bscTestnet: {
+      url: "https://data-seed-prebsc-1-s2.binance.org:8545",
+      chainId: 97,
+      accounts: getAccounts(),
+      gasPrice: 5000000000,
+    },
   },
   etherscan: {
     apiKey: {
       sepolia: ETHERSCAN_API_KEY,
+      bscTestnet: BSCSCAN_API_KEY,
     },
   },
 };

@@ -13,7 +13,7 @@ elif [ "$NETWORK" == "baobab" ]; then
   EXPLORER="https://baobab.klaytnscope.com/account/"
 elif [ "$NETWORK" == "cypress" ]; then
   EXPLORER="https://klaytnscope.com/account/"
-elif [ "$NETWORK" == "bsc_testnet" ] || [ "$NETWORK" == "bsc_testnet_USTN2" ]; then
+elif [ "$NETWORK" == "bscTestnet" ]; then
   EXPLORER="https://testnet.bscscan.com/address/"
 elif [ "$NETWORK" == "bsc" ] || [ "$NETWORK" == "bsc_USTN2" ]; then
   EXPLORER="https://bscscan.com/address/"
