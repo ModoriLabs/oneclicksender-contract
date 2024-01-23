@@ -4,13 +4,14 @@ import { TaskArguments } from "hardhat/types";
 
 const distribute = task("distribute", "Prints the list of accounts")
   .addFlag("dryrun")
-  .addParam("startId")
-  .addParam("endId")
+  .addParam("file", "csv file path relative to tasks/distribute.ts")
+  .addParam("startId", "inclusive")
+  .addParam("endId", "inclusive")
   .setAction(async (taskArgs: TaskArguments, hre) => {
     const { deployer } = await hre.getNamedAccounts();
     const fs = require("fs");
     const path = require("path")
-    const csvPath = path.join(__dirname, "data/MDUS.csv");
+    const csvPath = path.join(__dirname, taskArgs.file);
     console.log(csvPath)
     const csv = fs.readFileSync(csvPath, "utf-8");
     const rows = csv.split("\r\n");
