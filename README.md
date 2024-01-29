@@ -29,6 +29,15 @@ pnpm hardhat deploy --network bsc --tags mainnet
 | ERC20BatchSender | [0x7ADFDeEe2Abe60ED061591cccdb909b24aE650ce](https://testnet.bscscan.com/address/0x7ADFDeEe2Abe60ED061591cccdb909b24aE650ce) |
 | MockERC20        | [0x154EE4fD84f4F14A5d13C3fAa4088F1eCf81a5Da](https://testnet.bscscan.com/address/0x154EE4fD84f4F14A5d13C3fAa4088F1eCf81a5Da) |
 
+#### Baobab (Klaytn Testnet)
+
+| Contracts        | Address                                                                                                                         |
+|------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| BasicCostPolicy  | [0x58303615221a683C1c028C4047238B3aCDD97d9e](https://baobab.klaytnscope.com/account/0x58303615221a683C1c028C4047238B3aCDD97d9e) |
+| ERC20BatchSender | [0xc2e8fA68082d3cbeC24642c348290Bb595133C2C](https://baobab.klaytnscope.com/account/0xc2e8fA68082d3cbeC24642c348290Bb595133C2C) |
+| MockERC20        | [0xD682f0D6673Eb1A9829099877658902EFe5e90EE](https://baobab.klaytnscope.com/account/0xD682f0D6673Eb1A9829099877658902EFe5e90EE) |
+
+
 ## Tasks
 
 ### distribute

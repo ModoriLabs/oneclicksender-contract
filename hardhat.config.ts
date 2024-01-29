@@ -73,6 +73,16 @@ const config = {
       accounts: getAccounts(),
       gasPrice: 5000000000,
     },
+    baobab: {
+      url: "https://public-en-baobab.klaytn.net",
+      chainId: 1001,
+      accounts: getAccounts(),
+    },
+    cypress: {
+      url: "https://public-en-cypress.klaytn.net",
+      chainId: 8217,
+      accounts: MAINNET_PRIVATE_KEY !== undefined ? [MAINNET_PRIVATE_KEY] : [],
+    },
   },
   etherscan: {
     apiKey: {

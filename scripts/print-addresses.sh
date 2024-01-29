@@ -9,6 +9,8 @@ fi
 
 if [ "$NETWORK" == "mainnet" ]; then
   EXPLORER="https://etherscan.io/address/"
+elif [ "$NETWORK" == "sepolia" ]; then
+  EXPLORER="https://sepolia.etherscan.io/address/"
 elif [ "$NETWORK" == "baobab" ]; then
   EXPLORER="https://baobab.klaytnscope.com/account/"
 elif [ "$NETWORK" == "cypress" ]; then

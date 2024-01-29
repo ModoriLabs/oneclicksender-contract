@@ -8,6 +8,7 @@ type params ={
 }
 
 const DECIMAL16 = 10n ** 16n
+const DECIMAL18 = 10n ** 18n
 
 // perUserFee is not used but kept the same as oneTimeFee not to be used for free.
 const params: params = {
@@ -23,6 +24,14 @@ const params: params = {
     oneTimeFee: 8n * DECIMAL16,
     perUserFee: 8n * DECIMAL16,
   },
+  "baobab": {
+    oneTimeFee: 120n * DECIMAL18,
+    perUserFee: 120n * DECIMAL18,
+  },
+  "cypress": {
+    oneTimeFee: 120n * DECIMAL18,
+    perUserFee: 120n * DECIMAL18,
+  }
 }
 
 const deployFn: DeployFunction = async function (hre) {
