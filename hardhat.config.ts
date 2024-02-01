@@ -40,6 +40,10 @@ const config = {
     }
   },
   networks: {
+    localhost: {
+      url: "http://localhost:8545",
+      accounts: getAccounts(),
+    },
     mainnet: {
       url: `https://eth-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
       chainId: 1,
