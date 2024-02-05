@@ -7,6 +7,8 @@ pnpm hardhat deploy --network bsc --tags mainnet
 
 ## Deployments
 
+- Fee recipient: 0x509477dc6ab2ee4ee42765a90420da2c2cf2d165
+
 ### Mainnet
 
 | Contracts        | Address                                                                                                               |
