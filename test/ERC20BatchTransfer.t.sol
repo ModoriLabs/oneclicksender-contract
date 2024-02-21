@@ -17,7 +17,7 @@ contract ERC20BatchTransferTest is TestBase {
     function testUpgradeToAndCall() external {
         ERC20BatchSender newImpl = new ERC20BatchSender();
         batchSender.upgradeToAndCall(
-            address(newImpl), abi.encodeWithSignature("initialize(address,address)", MANAGER, costPolicy)
+            address(newImpl), abi.encodeWithSignature("initialize(address,address)", MANAGER, whitelistCostPolicy)
         );
     }
     */
@@ -41,7 +41,7 @@ contract ERC20BatchTransferTest is TestBase {
     }
 
     function test_SendOneUser() external {
-        uint256 cost = costPolicy.oneTimeFee();
+        uint256 cost = whitelistCostPolicy.oneTimeFee();
         uint256 total = 300;
         _faucet(address(this), 1000);
         deal(address(this), cost);
@@ -59,7 +59,7 @@ contract ERC20BatchTransferTest is TestBase {
     }
 
     function test_Send() external {
-        uint256 cost = costPolicy.oneTimeFee();
+        uint256 cost = whitelistCostPolicy.oneTimeFee();
         uint256 total = 300;
         _faucet(address(this), 1000);
         deal(address(this), cost);
@@ -79,7 +79,7 @@ contract ERC20BatchTransferTest is TestBase {
     }
 
     function test_Send200_ReceiveFee() external {
-        uint256 cost = costPolicy.oneTimeFee();
+        uint256 cost = whitelistCostPolicy.oneTimeFee();
         _send200();
         assertEq(FEE_RECIPIENT.balance, cost);
     }
@@ -124,7 +124,7 @@ contract ERC20BatchTransferTest is TestBase {
     }
 
     function _send200() internal {
-        uint256 cost = costPolicy.oneTimeFee();
+        uint256 cost = whitelistCostPolicy.oneTimeFee();
         uint256 total = 1_990_000;
         _faucet(address(this), total);
         deal(address(this), cost);

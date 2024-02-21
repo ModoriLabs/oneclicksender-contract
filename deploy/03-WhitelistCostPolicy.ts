@@ -9,13 +9,13 @@ const deployFn: DeployFunction = async function (hre) {
   const oneTimeFee = params[hre.network.name].oneTimeFee;
   const perUserFee = params[hre.network.name].perUserFee;
 
-  await deploy("BasicCostPolicy", {
+  await deploy("WhitelistCostPolicy", {
     from: deployer,
     log: true,
     args: [deployer, oneTimeFee, perUserFee, MAX_FREE_USER_COUNT],
   })
 }
 
-deployFn.tags = ["local", "testnet", "mainnet", "BasicCostPolicy"]
+deployFn.tags = ["local", "testnet", "mainnet", "WhitelistCostPolicy"]
 
 export default deployFn

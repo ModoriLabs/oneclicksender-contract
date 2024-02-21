@@ -24,11 +24,13 @@ pnpm hardhat deploy --network bsc --tags mainnet
 
 ### Cypress (Klaytn)
 
-| Contracts        | Address                                                                                                                  |
-|------------------|--------------------------------------------------------------------------------------------------------------------------|
-| BasicCostPolicy  | [0x347D7fC3A0F1355672b003e92C7077e1FF1D3067](https://klaytnscope.com/account/0x347D7fC3A0F1355672b003e92C7077e1FF1D3067) |
-| ERC20BatchSender | [0xe1bFB3d11890f9b11C046CdEC9f7E7cD7D472238](https://klaytnscope.com/account/0xe1bFB3d11890f9b11C046CdEC9f7E7cD7D472238) |
+| Contracts           | Address                                                                                                                  |
+|---------------------|--------------------------------------------------------------------------------------------------------------------------|
+| BasicCostPolicy     | [0x347D7fC3A0F1355672b003e92C7077e1FF1D3067](https://klaytnscope.com/account/0x347D7fC3A0F1355672b003e92C7077e1FF1D3067) |
+| ERC20BatchSender    | [0xe1bFB3d11890f9b11C046CdEC9f7E7cD7D472238](https://klaytnscope.com/account/0xe1bFB3d11890f9b11C046CdEC9f7E7cD7D472238) |
+| WhitelistCostPolicy | [0xD70b9239a89e6D56ea6661627cb710B98FF100DA](https://klaytnscope.com/account/0xD70b9239a89e6D56ea6661627cb710B98FF100DA) |
 
+### Testnet
 #### BSC Testnet
 
 | Contracts        | Address                                                                                                                      |

@@ -9,10 +9,10 @@ contract BasicCostPolicyTest is TestBase {
     }
 
     function test_calculateCost_WhenUserCountIsBiggerThanMaxFreeUserCount() public {
-        assertEq(costPolicy.calculateCost(ALICE, MIN_USER_COUNT + 1, 100, 0), costPolicy.oneTimeFee());
+        assertEq(basicCostPolicy.calculateCost(ALICE, MIN_USER_COUNT + 1, 100, 0), basicCostPolicy.oneTimeFee());
     }
 
     function test_calculateCost_WhenUserCountIsLessOrEqualThanMaxFreeUserCount() public {
-        assertEq(costPolicy.calculateCost(ALICE, MIN_USER_COUNT, 100, 0), 0);
+        assertEq(basicCostPolicy.calculateCost(ALICE, MIN_USER_COUNT, 100, 0), 0);
     }
 }

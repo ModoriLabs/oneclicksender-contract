@@ -13,7 +13,7 @@ import { WhitelistCostPolicy} from "src/WhitelistCostPolicy.sol";
 
 contract TestBase is PRBTest, StdCheats {
     ERC20BatchSender internal batchSender;
-    BasicCostPolicy internal costPolicy;
+    BasicCostPolicy internal basicCostPolicy;
     WhitelistCostPolicy internal whitelistCostPolicy;
     MockERC20 internal token;
 
@@ -28,10 +28,12 @@ contract TestBase is PRBTest, StdCheats {
         uint8 decimals = 18;
         token = new MockERC20("TEST ERC20", "TEST", decimals);
 
-        costPolicy = new BasicCostPolicy(MANAGER, 100, 10, MIN_USER_COUNT);
+        basicCostPolicy = new BasicCostPolicy(MANAGER, 100, 10, MIN_USER_COUNT);
         whitelistCostPolicy = new WhitelistCostPolicy(MANAGER, 100, 10, MIN_USER_COUNT);
         ERC20BatchSender batchSenderImpl = new ERC20BatchSender();
         batchSender = ERC20BatchSender(address(new ERC1967Proxy(address(batchSenderImpl), "")));
-        batchSender.initialize(MANAGER, ICostPolicy(costPolicy), FEE_RECIPIENT);
+
+        // use whitelistCostPolicy
+        batchSender.initialize(MANAGER, ICostPolicy(whitelistCostPolicy), FEE_RECIPIENT);
     }
 }
