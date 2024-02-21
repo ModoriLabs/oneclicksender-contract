@@ -9,10 +9,12 @@ import { ERC1967Proxy } from "@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy
 import { ERC20BatchSender } from "src/ERC20BatchSender.sol";
 import { BasicCostPolicy, ICostPolicy } from "src/BasicCostPolicy.sol";
 import { MockERC20 } from "src/test/MockERC20.sol";
+import { WhitelistCostPolicy} from "src/WhitelistCostPolicy.sol";
 
 contract TestBase is PRBTest, StdCheats {
     ERC20BatchSender internal batchSender;
     BasicCostPolicy internal costPolicy;
+    WhitelistCostPolicy internal whitelistCostPolicy;
     MockERC20 internal token;
 
     address internal MANAGER = address(1);
@@ -27,6 +29,7 @@ contract TestBase is PRBTest, StdCheats {
         token = new MockERC20("TEST ERC20", "TEST", decimals);
 
         costPolicy = new BasicCostPolicy(MANAGER, 100, 10, MIN_USER_COUNT);
+        whitelistCostPolicy = new WhitelistCostPolicy(MANAGER, 100, 10, MIN_USER_COUNT);
         ERC20BatchSender batchSenderImpl = new ERC20BatchSender();
         batchSender = ERC20BatchSender(address(new ERC1967Proxy(address(batchSenderImpl), "")));
         batchSender.initialize(MANAGER, ICostPolicy(costPolicy), FEE_RECIPIENT);
