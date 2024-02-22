@@ -1,5 +1,14 @@
 # OneClickSender
 
+## Test
+```shell
+# To run unit tests
+forge test --no-match-contract ForkE2ETest
+
+# To run E2E tests
+forge test --match-contract ForkE2ETest
+```
+
 ## Deploy
 ```sh
 pnpm hardhat deploy --network bsc --tags mainnet
@@ -10,6 +19,7 @@ pnpm hardhat deploy --network bsc --tags mainnet
 - Fee recipient: 0x509477dc6ab2ee4ee42765a90420da2c2cf2d165
 
 ### Mainnet
+ERC20BatchSenderV1 is deployed. To use WhitelistCostPolicy, use ERC20BatchSenderV2.
 
 | Contracts        | Address                                                                                                               |
 |------------------|-----------------------------------------------------------------------------------------------------------------------|
@@ -17,18 +27,22 @@ pnpm hardhat deploy --network bsc --tags mainnet
 | ERC20BatchSender | [0xe1bFB3d11890f9b11C046CdEC9f7E7cD7D472238](https://etherscan.io/address/0xe1bFB3d11890f9b11C046CdEC9f7E7cD7D472238) |
 
 ### BSC
+ERC20BatchSenderV1 is deployed. To use WhitelistCostPolicy, use ERC20BatchSenderV2.
+
 | Contracts        | Address                                                                                                              |
 |------------------|----------------------------------------------------------------------------------------------------------------------|
 | BasicCostPolicy  | [0x347D7fC3A0F1355672b003e92C7077e1FF1D3067](https://bscscan.com/address/0x347D7fC3A0F1355672b003e92C7077e1FF1D3067) |
 | ERC20BatchSender | [0xe1bFB3d11890f9b11C046CdEC9f7E7cD7D472238](https://bscscan.com/address/0xe1bFB3d11890f9b11C046CdEC9f7E7cD7D472238) |
 
 ### Cypress (Klaytn)
+ERC20BatchSenderV2 is deployed.
 
 | Contracts           | Address                                                                                                                  |
 |---------------------|--------------------------------------------------------------------------------------------------------------------------|
 | BasicCostPolicy     | [0x347D7fC3A0F1355672b003e92C7077e1FF1D3067](https://klaytnscope.com/account/0x347D7fC3A0F1355672b003e92C7077e1FF1D3067) |
 | ERC20BatchSender    | [0xe1bFB3d11890f9b11C046CdEC9f7E7cD7D472238](https://klaytnscope.com/account/0xe1bFB3d11890f9b11C046CdEC9f7E7cD7D472238) |
-| WhitelistCostPolicy | [0xD70b9239a89e6D56ea6661627cb710B98FF100DA](https://klaytnscope.com/account/0xD70b9239a89e6D56ea6661627cb710B98FF100DA) |
+| WhitelistCostPolicy | [0x0dA42C1F37d1C138361f0e3F1743065dC0399975](https://klaytnscope.com/account/0x0dA42C1F37d1C138361f0e3F1743065dC0399975) |
+
 
 ### Testnet
 #### BSC Testnet

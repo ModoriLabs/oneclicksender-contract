@@ -6,12 +6,12 @@ const deployFn: DeployFunction = async function (hre) {
   const { deploy, get } = deployments
   const { deployer, feeRecipient} = await getNamedAccounts()
   console.log(`deployer: ${deployer}, feeRecipient: ${feeRecipient}`);
-  const basicCostPolicy = (await get("BasicCostPolicy")).address
-  console.log("basicCostPolicy: ", basicCostPolicy);
+  const whitelistCostPolicy = (await get("WhitelistCostPolicy")).address
+  console.log("whitelistCostPolicy: ", whitelistCostPolicy);
 
   const chainId = await getChainId()
   const getUpgradeIndex = () => {
-    if (chainId === "1") {
+    if (chainId === "1" || chainId === "8217") {
       return 1
     } else {
       return 0
@@ -19,6 +19,7 @@ const deployFn: DeployFunction = async function (hre) {
   }
 
   await deploy("ERC20BatchSender", {
+    contract: "ERC20BatchSenderV2",
     from: deployer,
     log: true,
     proxy: {
@@ -33,14 +34,14 @@ const deployFn: DeployFunction = async function (hre) {
           methodName: 'initialize',
           args: [
             deployer,
-            basicCostPolicy,
+            whitelistCostPolicy,
             feeRecipient,
           ],
         },
         onUpgrade: {
           methodName: 'reinitialize',
           args: [
-            basicCostPolicy,
+            whitelistCostPolicy,
             feeRecipient,
           ],
         }

@@ -1,11 +1,12 @@
 // SPDX-License-Identifier: MIT
 pragma solidity 0.8.23;
 
-import { ICostPolicy } from "./interfaces/ICostPolicy.sol";
+import { ICostPolicyV2 } from "./interfaces/ICostPolicyV2.sol";
 import { Ownable } from "@openzeppelin/contracts/access/Ownable.sol";
 import { Ownable2Step } from "@openzeppelin/contracts/access/Ownable2Step.sol";
+import {ICostPolicy} from "./interfaces/ICostPolicy.sol";
 
-contract WhitelistCostPolicy is ICostPolicy, Ownable2Step {
+contract WhitelistCostPolicy is ICostPolicyV2, Ownable2Step {
     uint256 public oneTimeFee;
     uint256 public perUserFee;
     uint256 public maxFreeUserCount;
@@ -28,6 +29,7 @@ contract WhitelistCostPolicy is ICostPolicy, Ownable2Step {
     }
 
     function calculateCost(
+        address token,
         address sender,
         uint256 userCount,
         uint256 totalAmount,

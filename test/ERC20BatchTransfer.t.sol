@@ -122,30 +122,4 @@ contract ERC20BatchTransferTest is TestBase {
         batchSender.withdrawERC20(token, address(this), 100);
         assertEq(token.balanceOf(address(this)), 100);
     }
-
-    function _send200() internal {
-        uint256 cost = whitelistCostPolicy.oneTimeFee();
-        uint256 total = 1_990_000;
-        _faucet(address(this), total);
-        deal(address(this), cost);
-
-        token.approve(address(batchSender), type(uint256).max);
-
-        address[] memory recipients = new address[](200);
-        for (uint256 i = 0; i < 200; i++) {
-            recipients[i] = address(uint160(10_000 + i));
-        }
-
-        uint256[] memory amounts = new uint256[](200);
-        for (uint256 i = 0; i < 200; i++) {
-            amounts[i] = i * 100;
-        }
-
-        uint256 typeId = 0;
-        batchSender.send{ value: cost }(token, recipients, amounts, total, typeId);
-    }
-
-    function _faucet(address _recipient, uint256 _amount) private {
-        token.mint(_recipient, _amount);
-    }
 }

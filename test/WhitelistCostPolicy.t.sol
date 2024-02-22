@@ -12,23 +12,23 @@ contract WhitelistCostPolicyTest is TestBase {
     }
 
     function test_CalculateCost_WhenUserCountIsBiggerThanMaxFreeUserCount() public {
-        assertEq(whitelistCostPolicy.calculateCost(ALICE, MIN_USER_COUNT + 1, 100, 0), whitelistCostPolicy.oneTimeFee());
+        assertEq(whitelistCostPolicy.calculateCost(address(token), ALICE, MIN_USER_COUNT + 1, 100, 0), whitelistCostPolicy.oneTimeFee());
     }
 
     function test_CalculateCost_WhenUserCountIsLessOrEqualThanMaxFreeUserCount() public {
-        assertEq(whitelistCostPolicy.calculateCost(ALICE, MIN_USER_COUNT, 100, 0), 0);
+        assertEq(whitelistCostPolicy.calculateCost(address(token), ALICE, MIN_USER_COUNT, 100, 0), 0);
     }
 
     function test_CalculateCost_WhenUserIsWhitelisted() public {
         vm.prank(MANAGER);
         whitelistCostPolicy.addWhitelist(ALICE);
-        assertEq(whitelistCostPolicy.calculateCost(ALICE, MIN_USER_COUNT + 1, 100, 0), 0);
+        assertEq(whitelistCostPolicy.calculateCost(address(token), ALICE, MIN_USER_COUNT + 1, 100, 0), 0);
     }
 
     function test_CalculateCost_WhenUserIsRemovedFromWhitelist() public {
         vm.prank(MANAGER);
         whitelistCostPolicy.removeWhitelist(ALICE);
-        assertEq(whitelistCostPolicy.calculateCost(ALICE, MIN_USER_COUNT + 1, 100, 0), whitelistCostPolicy.oneTimeFee());
+        assertEq(whitelistCostPolicy.calculateCost(address(token), ALICE, MIN_USER_COUNT + 1, 100, 0), whitelistCostPolicy.oneTimeFee());
     }
 
     function test_RevertWhen_AddWhitelist_NotByOwner() public {
