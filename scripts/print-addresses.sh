@@ -11,6 +11,8 @@ if [ "$NETWORK" == "mainnet" ]; then
   EXPLORER="https://etherscan.io/address/"
 elif [ "$NETWORK" == "sepolia" ]; then
   EXPLORER="https://sepolia.etherscan.io/address/"
+elif [ "$NETWORK" == "polygon" ]; then
+  EXPLORER="https://polygonscan.com/address/"
 elif [ "$NETWORK" == "baobab" ]; then
   EXPLORER="https://baobab.klaytnscope.com/account/"
 elif [ "$NETWORK" == "cypress" ]; then
@@ -19,6 +21,10 @@ elif [ "$NETWORK" == "bscTestnet" ]; then
   EXPLORER="https://testnet.bscscan.com/address/"
 elif [ "$NETWORK" == "bsc" ] || [ "$NETWORK" == "bsc_USTN2" ]; then
   EXPLORER="https://bscscan.com/address/"
+elif [ "$NETWORK" == "opBnb" ]; then
+  EXPLORER="https://opbnb.bscscan.com/address/"
+elif [ "$NETWORK" == "opBnbTestnet" ]; then
+  EXPLORER="https://opbnb-testnet.bscscan.com/address/"
 elif [ "$NETWORK" == "localhost" ]; then
   EXPLORER=""
 else

@@ -34,6 +34,14 @@ ERC20BatchSenderV1 is deployed. To use WhitelistCostPolicy, use ERC20BatchSender
 | BasicCostPolicy  | [0x347D7fC3A0F1355672b003e92C7077e1FF1D3067](https://bscscan.com/address/0x347D7fC3A0F1355672b003e92C7077e1FF1D3067) |
 | ERC20BatchSender | [0xe1bFB3d11890f9b11C046CdEC9f7E7cD7D472238](https://bscscan.com/address/0xe1bFB3d11890f9b11C046CdEC9f7E7cD7D472238) |
 
+### Polygon
+ERC20BatchSenderV1 is deployed. To use WhitelistCostPolicy, use ERC20BatchSenderV2.
+
+| Contracts        | Address                                                                                                                  |
+|------------------|--------------------------------------------------------------------------------------------------------------------------|
+| BasicCostPolicy  | [0xFcD58eCDfbB46ca31514C30ea996B17AC21778b3](https://polygonscan.com/address/0xFcD58eCDfbB46ca31514C30ea996B17AC21778b3) |
+| ERC20BatchSender | [0xF4f31C62AEF4Ec3F0429dc48F95dF10B1146F7D0](https://polygonscan.com/address/0xF4f31C62AEF4Ec3F0429dc48F95dF10B1146F7D0) |
+
 ### Cypress (Klaytn)
 ERC20BatchSenderV2 is deployed.
 
