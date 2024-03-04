@@ -62,7 +62,8 @@ const config = {
     mumbai: {
       url: `https://polygon-mumbai.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
       chainId: 80001,
-      accounts: MAINNET_PRIVATE_KEY !== undefined ? [MAINNET_PRIVATE_KEY] : [],
+      accounts: getAccounts(),
+      gasPrice: 2500000000,
     },
     bsc: {
       url: 'https://bsc-dataseed.binance.org',
@@ -76,6 +77,7 @@ const config = {
       accounts: getAccounts(),
       gasPrice: 5000000000,
     },
+    // klaytn
     baobab: {
       url: "https://public-en-baobab.klaytn.net",
       chainId: 1001,

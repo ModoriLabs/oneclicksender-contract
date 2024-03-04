@@ -61,6 +61,14 @@ ERC20BatchSenderV2 is deployed.
 | ERC20BatchSender | [0x7ADFDeEe2Abe60ED061591cccdb909b24aE650ce](https://testnet.bscscan.com/address/0x7ADFDeEe2Abe60ED061591cccdb909b24aE650ce) |
 | MockERC20        | [0x154EE4fD84f4F14A5d13C3fAa4088F1eCf81a5Da](https://testnet.bscscan.com/address/0x154EE4fD84f4F14A5d13C3fAa4088F1eCf81a5Da) |
 
+#### Mumbai
+
+| Contracts        | Address                                                                                                                         |
+|------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| BasicCostPolicy  | [0x626894D928DdD9137CadF1A6C0D52A2c023D4f57](https://mumbai.polygonscan.com/address/0x626894D928DdD9137CadF1A6C0D52A2c023D4f57) |
+| ERC20BatchSender | [0x7506c621edBEfD7Ba344c98ff716111AaE3EA226](https://mumbai.polygonscan.com/address/0x7506c621edBEfD7Ba344c98ff716111AaE3EA226) |
+| MockERC20        | [0xb5c26A5407f91B7FE0458338854C3604099593a5](https://mumbai.polygonscan.com/address/0xb5c26A5407f91B7FE0458338854C3604099593a5) |
+
 #### Baobab (Klaytn Testnet)
 
 | Contracts        | Address                                                                                                                         |

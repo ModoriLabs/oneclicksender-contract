@@ -13,6 +13,8 @@ elif [ "$NETWORK" == "sepolia" ]; then
   EXPLORER="https://sepolia.etherscan.io/address/"
 elif [ "$NETWORK" == "polygon" ]; then
   EXPLORER="https://polygonscan.com/address/"
+elif [ "$NETWORK" == "mumbai" ]; then
+  EXPLORER="https://mumbai.polygonscan.com/address/"
 elif [ "$NETWORK" == "baobab" ]; then
   EXPLORER="https://baobab.klaytnscope.com/account/"
 elif [ "$NETWORK" == "cypress" ]; then
