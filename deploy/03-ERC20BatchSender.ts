@@ -40,7 +40,7 @@ const deployFn: DeployFunction = async function (hre) {
             feeRecipient,
           ],
         },
-        /*
+        // To update costPolicy to whitelistCostPolicy.
         onUpgrade: {
           methodName: 'reinitialize',
           args: [
@@ -48,7 +48,6 @@ const deployFn: DeployFunction = async function (hre) {
             feeRecipient,
           ],
         }
-        */
       }
     }
   })

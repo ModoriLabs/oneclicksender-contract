@@ -23,7 +23,7 @@ export const params: params = {
     oneTimeFee: 8n * DECIMAL16, // 1 BNB = $300 => $24 = 0.08 BNB
     perUserFee: 8n * DECIMAL16,
   },
-  "bscTestnet": {
+  "bsc_testnet": {
     oneTimeFee: 8n * DECIMAL16,
     perUserFee: 8n * DECIMAL16,
   },
