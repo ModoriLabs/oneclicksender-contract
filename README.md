@@ -27,27 +27,27 @@ ERC20BatchSenderV1 is deployed. To use WhitelistCostPolicy, use ERC20BatchSender
 | ERC20BatchSender | [0xe1bFB3d11890f9b11C046CdEC9f7E7cD7D472238](https://etherscan.io/address/0xe1bFB3d11890f9b11C046CdEC9f7E7cD7D472238) |
 
 ### BSC
-ERC20BatchSenderV1 is deployed. To use WhitelistCostPolicy, use ERC20BatchSenderV2.
+ERC20BatchSenderV2 is deployed.
 
-| Contracts        | Address                                                                                                              |
-|------------------|----------------------------------------------------------------------------------------------------------------------|
-| BasicCostPolicy  | [0x347D7fC3A0F1355672b003e92C7077e1FF1D3067](https://bscscan.com/address/0x347D7fC3A0F1355672b003e92C7077e1FF1D3067) |
-| ERC20BatchSender | [0xe1bFB3d11890f9b11C046CdEC9f7E7cD7D472238](https://bscscan.com/address/0xe1bFB3d11890f9b11C046CdEC9f7E7cD7D472238) |
+| Contracts           | Address                                                                                                              |
+|---------------------|----------------------------------------------------------------------------------------------------------------------|
+| ERC20BatchSender    | [0xe1bFB3d11890f9b11C046CdEC9f7E7cD7D472238](https://bscscan.com/address/0xe1bFB3d11890f9b11C046CdEC9f7E7cD7D472238) |
+| WhitelistCostPolicy | [0xD70b9239a89e6D56ea6661627cb710B98FF100DA](https://bscscan.com/address/0xD70b9239a89e6D56ea6661627cb710B98FF100DA) |
+
 
 ### Polygon
-ERC20BatchSenderV1 is deployed. To use WhitelistCostPolicy, use ERC20BatchSenderV2.
+ERC20BatchSenderV2 is deployed.
 
-| Contracts        | Address                                                                                                                  |
-|------------------|--------------------------------------------------------------------------------------------------------------------------|
-| BasicCostPolicy  | [0xFcD58eCDfbB46ca31514C30ea996B17AC21778b3](https://polygonscan.com/address/0xFcD58eCDfbB46ca31514C30ea996B17AC21778b3) |
-| ERC20BatchSender | [0xF4f31C62AEF4Ec3F0429dc48F95dF10B1146F7D0](https://polygonscan.com/address/0xF4f31C62AEF4Ec3F0429dc48F95dF10B1146F7D0) |
+| Contracts           | Address                                                                                                                  |
+|---------------------|--------------------------------------------------------------------------------------------------------------------------|
+| ERC20BatchSender    | [0xF4f31C62AEF4Ec3F0429dc48F95dF10B1146F7D0](https://polygonscan.com/address/0xF4f31C62AEF4Ec3F0429dc48F95dF10B1146F7D0) |
+| WhitelistCostPolicy | [0x347d7fc3a0f1355672b003e92c7077e1ff1d3067](https://polygonscan.com/address/0x347d7fc3a0f1355672b003e92c7077e1ff1d3067) |
 
 ### Cypress (Klaytn)
 ERC20BatchSenderV2 is deployed.
 
 | Contracts           | Address                                                                                                                  |
 |---------------------|--------------------------------------------------------------------------------------------------------------------------|
-| BasicCostPolicy     | [0x347D7fC3A0F1355672b003e92C7077e1FF1D3067](https://klaytnscope.com/account/0x347D7fC3A0F1355672b003e92C7077e1FF1D3067) |
 | ERC20BatchSender    | [0xe1bFB3d11890f9b11C046CdEC9f7E7cD7D472238](https://klaytnscope.com/account/0xe1bFB3d11890f9b11C046CdEC9f7E7cD7D472238) |
 | WhitelistCostPolicy | [0x0dA42C1F37d1C138361f0e3F1743065dC0399975](https://klaytnscope.com/account/0x0dA42C1F37d1C138361f0e3F1743065dC0399975) |
 
