@@ -34,5 +34,13 @@ export const params: params = {
   "cypress": {
     oneTimeFee: 120n * DECIMAL18, // 1 KLAY = $0.2 (2024.01.29) => $24 = 120 KLAY
     perUserFee: 120n * DECIMAL18,
+  },
+  "mumbai": {
+    oneTimeFee: DECIMAL18 / 1000n, // 0.001 MATIC in tests
+    perUserFee: DECIMAL18 / 1000n,
+  },
+  "polygon": {
+    oneTimeFee: 30n * DECIMAL18,
+    perUserFee: 30n * DECIMAL18,
   }
 }

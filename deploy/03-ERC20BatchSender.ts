@@ -11,6 +11,8 @@ const deployFn: DeployFunction = async function (hre) {
 
   const chainId = await getChainId()
   const getUpgradeIndex = () => {
+    // In the deployment file, numDeployments: 2 equals upgradeIndex 1.
+    // 8217: KLAY
     if (chainId === "1" || chainId === "8217") {
       return 1
     } else {
@@ -38,6 +40,7 @@ const deployFn: DeployFunction = async function (hre) {
             feeRecipient,
           ],
         },
+        /*
         onUpgrade: {
           methodName: 'reinitialize',
           args: [
@@ -45,6 +48,7 @@ const deployFn: DeployFunction = async function (hre) {
             feeRecipient,
           ],
         }
+        */
       }
     }
   })
