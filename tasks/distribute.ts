@@ -2,7 +2,7 @@ import { task } from "hardhat/config";
 import { BigNumber } from "ethers";
 import { TaskArguments } from "hardhat/types";
 
-const distribute = task("distribute", "Prints the list of accounts")
+export const distribute = task("distribute", "Prints the list of accounts")
   .addFlag("dryrun")
   .addParam("file", "csv file path relative to tasks/distribute.ts")
   .addParam("startId", "inclusive")
@@ -81,5 +81,3 @@ const distribute = task("distribute", "Prints the list of accounts")
       }
     }
   });
-
-export default distribute;

@@ -28,6 +28,7 @@ contract WhitelistCostPolicy is ICostPolicyV2, Ownable2Step {
         maxFreeUserCount = _minUserCount;
     }
 
+    /// @param token token to send. Use address(0) for ETH
     function calculateCost(
         address token,
         address sender,

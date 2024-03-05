@@ -2,7 +2,7 @@ import * as dotenv from "dotenv"
 import "@nomicfoundation/hardhat-foundry";
 import "@nomicfoundation/hardhat-toolbox"
 import "hardhat-deploy"
-import "./tasks/distribute"
+import "./tasks";
 
 dotenv.config()
 const TESTNET_MNEMONIC = process.env.TESTNET_MNEMONIC
@@ -57,7 +57,7 @@ const config = {
       url: `https://polygon-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
       chainId: 137,
       accounts: MAINNET_PRIVATE_KEY !== undefined ? [MAINNET_PRIVATE_KEY] : [],
-      gasPrice: 80000000000,
+      gasPrice: 280000000000, // 280 gwei
     },
     mumbai: {
       url: `https://polygon-mumbai.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,

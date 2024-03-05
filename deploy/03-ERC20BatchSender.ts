@@ -12,11 +12,13 @@ const deployFn: DeployFunction = async function (hre) {
   const chainId = await getChainId()
   const getUpgradeIndex = () => {
     // In the deployment file, numDeployments: 2 equals upgradeIndex 1.
-    // 8217: KLAY
-    if (chainId === "1" || chainId === "8217") {
-      return 1
-    } else {
+    // - mainnet: v1
+    // - polygon, bsc, cypress: v2
+    // Testnet deployment version is not managed.
+    if (chainId === "1") {
       return 0
+    } else {
+      return 1
     }
   }
 
