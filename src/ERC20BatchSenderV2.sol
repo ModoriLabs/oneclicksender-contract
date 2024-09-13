@@ -102,7 +102,7 @@ contract ERC20BatchSenderV2 is UpgradeableBase {
         emit BatchSend(address(_token), _accounts, _amounts, _typeId);
     }
 
-    function _sendETH(address[] calldata _accounts, uint256[] calldata _amounts, uint256 _typeId) private payable {
+    function _sendETH(address[] calldata _accounts, uint256[] calldata _amounts, uint256 _typeId) private {
         for (uint256 i = 0; i < _accounts.length; i++) {
             address account = _accounts[i];
             uint256 amount = _amounts[i];
