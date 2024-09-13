@@ -65,7 +65,7 @@ jobs:
           echo "✅ Passed" >> $GITHUB_STEP_SUMMARY
 
   test:
-    needs: ["lint", "build"]
+    needs: ["build"]
     runs-on: "ubuntu-latest"
     steps:
       - name: "Check out the repo"
