@@ -26,11 +26,10 @@ contract ForkE2ETest is TestBase {
         _send200WithoutFaucet();
         uint256 balanceAfter = batchSender.feeRecipient().balance;
 
-
         assertEq(balanceBefore, balanceAfter);
         assertEq(token.balanceOf(address(10_000)), 0);
         assertEq(token.balanceOf(address(10_001)), 100);
-        assertEq(token.balanceOf(address(10_199)), 19900);
+        assertEq(token.balanceOf(address(10_199)), 19_900);
     }
 
     function test_Send200_TakesFee_IfTheUserIsNotInTheWhitelist() external {
@@ -44,7 +43,7 @@ contract ForkE2ETest is TestBase {
         assertEq(balanceAfter, balanceBefore + whitelistCostPolicy.oneTimeFee());
         assertEq(token.balanceOf(address(10_000)), 0);
         assertEq(token.balanceOf(address(10_001)), 100);
-        assertEq(token.balanceOf(address(10_199)), 19900);
+        assertEq(token.balanceOf(address(10_199)), 19_900);
     }
 
     // same as _send200

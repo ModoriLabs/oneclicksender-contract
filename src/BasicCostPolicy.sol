@@ -19,7 +19,9 @@ contract BasicCostPolicy is ICostPolicy, Ownable2Step {
         uint256 _oneTimeFee,
         uint256 _perUserFee,
         uint256 _minUserCount
-    ) Ownable(initialOwner) {
+    )
+        Ownable(initialOwner)
+    {
         oneTimeFee = _oneTimeFee;
         perUserFee = _perUserFee;
         maxFreeUserCount = _minUserCount;
