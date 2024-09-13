@@ -26,21 +26,14 @@ contract ERC20BatchSender is UpgradeableBase {
         _disableInitializers();
     }
 
-    function initialize(
-        address manager,
-        ICostPolicy _costPolicy,
-        address _feeRecipient
-    ) public initializer {
+    function initialize(address manager, ICostPolicy _costPolicy, address _feeRecipient) public initializer {
         __UpgradeableBase_init(_msgSender());
         _grantManagerRole(manager);
         costPolicy = _costPolicy;
         feeRecipient = _feeRecipient;
     }
 
-    function reinitialize(
-        ICostPolicy _costPolicy,
-        address _feeRecipient
-    ) public reinitializer(2) {
+    function reinitialize(ICostPolicy _costPolicy, address _feeRecipient) public reinitializer(2) {
         costPolicy = _costPolicy;
         feeRecipient = _feeRecipient;
     }

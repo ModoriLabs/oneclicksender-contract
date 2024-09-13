@@ -18,7 +18,7 @@ contract E2ETest is TestBase {
         assertEq(FEE_RECIPIENT.balance, 0);
         assertEq(token.balanceOf(address(10_000)), 0);
         assertEq(token.balanceOf(address(10_001)), 100);
-        assertEq(token.balanceOf(address(10_199)), 19900);
+        assertEq(token.balanceOf(address(10_199)), 19_900);
     }
 
     function test_Send200_TakesFee_IfTheUserIsNotInTheWhitelist() external {
@@ -31,6 +31,6 @@ contract E2ETest is TestBase {
         assertEq(FEE_RECIPIENT.balance, whitelistCostPolicy.oneTimeFee());
         assertEq(token.balanceOf(address(10_000)), 0);
         assertEq(token.balanceOf(address(10_001)), 100);
-        assertEq(token.balanceOf(address(10_199)), 19900);
+        assertEq(token.balanceOf(address(10_199)), 19_900);
     }
 }

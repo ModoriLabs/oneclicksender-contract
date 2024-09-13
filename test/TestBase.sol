@@ -9,7 +9,7 @@ import { ERC1967Proxy } from "@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy
 import { ERC20BatchSenderV2 } from "src/ERC20BatchSenderV2.sol";
 import { BasicCostPolicy } from "src/BasicCostPolicy.sol";
 import { ICostPolicyV2 } from "src/interfaces/ICostPolicyV2.sol";
-import { WhitelistCostPolicy} from "src/WhitelistCostPolicy.sol";
+import { WhitelistCostPolicy } from "src/WhitelistCostPolicy.sol";
 import { MockERC20 } from "src/test/MockERC20.sol";
 
 contract TestBase is PRBTest, StdCheats {
