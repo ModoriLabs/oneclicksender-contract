@@ -42,7 +42,8 @@ contract ERC20BatchTransferTest is TestBase {
 
     function test_SendOneUser() external {
         uint256 cost = whitelistCostPolicy.oneTimeFee();
-        uint256 total = 300;
+        uint256 wrongTotal = 300;
+        uint256 correctTotal = 100;
         _faucet(address(this), 1000);
         deal(address(this), cost);
 
@@ -55,7 +56,11 @@ contract ERC20BatchTransferTest is TestBase {
         amounts[0] = 100;
 
         uint256 typeId = 0;
-        batchSender.send{ value: cost }(token, recipients, amounts, total, typeId);
+        vm.expectRevert(abi.encodeWithSelector(ERC20BatchSenderV2.InvalidTotalAmount.selector, 100, 300));
+        batchSender.send{ value: cost }(token, recipients, amounts, wrongTotal, typeId);
+
+        batchSender.send{ value: cost }(token, recipients, amounts, correctTotal, typeId);
+        assertEq(token.balanceOf(ALICE), 100);
     }
 
     function test_Send() external {
@@ -76,6 +81,8 @@ contract ERC20BatchTransferTest is TestBase {
 
         uint256 typeId = 0;
         batchSender.send{ value: cost }(token, recipients, amounts, total, typeId);
+        assertEq(token.balanceOf(ALICE), 100);
+        assertEq(token.balanceOf(BOB), 200);
     }
 
     function test_Send200_ReceiveFee() external {

@@ -15,6 +15,7 @@ contract ERC20BatchSender is UpgradeableBase {
 
     error InsufficientCost();
     error LengthMismatch();
+    error InvalidTotalAmount(uint256 actual, uint256 expected);
 
     event BatchSend(address indexed token, address[] accounts, uint256[] amounts, uint256 typeId);
     event ERC20TokenWithdrawn(IERC20 _token, address _recipient, uint256 _value);
@@ -64,8 +65,9 @@ contract ERC20BatchSender is UpgradeableBase {
         if (msg.value < cost) {
             revert InsufficientCost();
         }
-        _sendFee(cost);
+        _checkTotalAmount(_amounts, _totalAmount);
 
+        _sendFee(cost);
         _token.safeTransferFrom(_msgSender(), address(this), _totalAmount);
         _send(_token, _accounts, _amounts, _typeId);
     }
@@ -87,8 +89,9 @@ contract ERC20BatchSender is UpgradeableBase {
         if (msg.value < _totalAmount + cost) {
             revert InsufficientCost();
         }
-        _sendFee(cost);
+        _checkTotalAmount(_amounts, _totalAmount);
 
+        _sendFee(cost);
         _sendETH(_accounts, _amounts, _typeId);
     }
 
@@ -154,5 +157,15 @@ contract ERC20BatchSender is UpgradeableBase {
     function setCostPolicy(ICostPolicy _costPolicy) public onlyManager {
         costPolicy = _costPolicy;
         emit CostPolicyUpdated(_costPolicy);
+    }
+
+    function _checkTotalAmount(uint256[] calldata _amounts, uint256 _totalAmount) internal pure {
+        uint256 sumAmount = 0;
+        for (uint256 i = 0; i < _amounts.length; i++) {
+            sumAmount += _amounts[i];
+        }
+        if (sumAmount != _totalAmount) {
+            revert InvalidTotalAmount(sumAmount, _totalAmount);
+        }
     }
 }
