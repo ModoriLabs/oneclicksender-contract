@@ -33,12 +33,12 @@ ERC20BatchSenderV1 is deployed. To use WhitelistCostPolicy, use ERC20BatchSender
 | ERC20BatchSender | [0xe1bFB3d11890f9b11C046CdEC9f7E7cD7D472238](https://etherscan.io/address/0xe1bFB3d11890f9b11C046CdEC9f7E7cD7D472238) |
 
 ### Soneium
-ERC20BatchSenderV1 is deployed. To use WhitelistCostPolicy, use ERC20BatchSenderV2.
+ERC20BatchSenderV2 is deployed.
 
-| Contracts                    | Address                                                                                                                  |
-|------------------------------|--------------------------------------------------------------------------------------------------------------------------|
-| BasicCostPolicy | [0x347D7fC3A0F1355672b003e92C7077e1FF1D3067](https://soneium.blockscout.com/address/0x347D7fC3A0F1355672b003e92C7077e1FF1D3067) |
-| ERC20BatchSender | [0xD70b9239a89e6D56ea6661627cb710B98FF100DA](https://soneium.blockscout.com/address/0xD70b9239a89e6D56ea6661627cb710B98FF100DA) |
+| Contracts           | Address                                                                                                                         |
+|---------------------|---------------------------------------------------------------------------------------------------------------------------------|
+| BasicCostPolicy     | [0x347D7fC3A0F1355672b003e92C7077e1FF1D3067](https://soneium.blockscout.com/address/0x347D7fC3A0F1355672b003e92C7077e1FF1D3067) |
+| ERC20BatchSender    | [0xD70b9239a89e6D56ea6661627cb710B98FF100DA](https://soneium.blockscout.com/address/0xD70b9239a89e6D56ea6661627cb710B98FF100DA) |
 | WhitelistCostPolicy | [0xCc62a69c927cF4fDce883Bb1f00a0533f29cd104](https://soneium.blockscout.com/address/0xCc62a69c927cF4fDce883Bb1f00a0533f29cd104) |
 
 
