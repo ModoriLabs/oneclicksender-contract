@@ -6,8 +6,8 @@ const deployFn: DeployFunction = async function (hre) {
   const { deploy } = deployments
   const { deployer} = await getNamedAccounts()
   console.log("deployer: ", deployer);
-  const oneTimeFee = params[hre.network.name].oneTimeFee;
-  const perUserFee = params[hre.network.name].perUserFee;
+  const oneTimeFee = params[hre.network.name].oneTimeFee!;
+  const perUserFee = params[hre.network.name].perUserFee!;
 
   await deploy("WhitelistCostPolicy", {
     from: deployer,

@@ -11,14 +11,19 @@ const API_KEY_ALCHEMY = process.env.API_KEY_ALCHEMY
 const MAINNET_PRIVATE_KEY = process.env.MAINNET_PRIVATE_KEY
 const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY
 const BSCSCAN_API_KEY = process.env.BSCSCAN_API_KEY
+const SCS_API_KEY = process.env.SCS_API_KEY
 
-const getAccounts = () => {
+const getTestnetAccounts = () => {
   if (TESTNET_PRIVATE_KEY !== undefined) {
     return [TESTNET_PRIVATE_KEY]
   } else {
     return []
   }
 }
+
+const getMainnetAccounts = () => (
+  MAINNET_PRIVATE_KEY !== undefined ? [MAINNET_PRIVATE_KEY] : []
+)
 
 const config = {
   solidity: {
@@ -41,47 +46,52 @@ const config = {
   networks: {
     localhost: {
       url: "http://localhost:8545",
-      accounts: getAccounts(),
+      accounts: getTestnetAccounts(),
     },
     mainnet: {
       url: `https://eth-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
       chainId: 1,
-      accounts: MAINNET_PRIVATE_KEY !== undefined ? [MAINNET_PRIVATE_KEY] : [],
+      accounts: getMainnetAccounts(),
     },
     sepolia: {
       url: `https://eth-sepolia.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
       chainId: 11155111,
-      accounts: getAccounts(),
+      accounts: getTestnetAccounts(),
+    },
+    soneium: {
+      url: `https://soneium.rpc.scs.startale.com?apikey=${SCS_API_KEY}`,
+      chainId: 1868,
+      accounts: getMainnetAccounts(),
     },
     polygon: {
       url: `https://polygon-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
       chainId: 137,
-      accounts: MAINNET_PRIVATE_KEY !== undefined ? [MAINNET_PRIVATE_KEY] : [],
+      accounts: getMainnetAccounts(),
       gasPrice: 280000000000, // 280 gwei
     },
     mumbai: {
       url: `https://polygon-mumbai.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
       chainId: 80001,
-      accounts: getAccounts(),
+      accounts: getTestnetAccounts(),
       gasPrice: 2500000000,
     },
     bsc: {
       url: 'https://bsc-dataseed.binance.org',
       chainId: 56,
-      accounts: MAINNET_PRIVATE_KEY !== undefined ? [MAINNET_PRIVATE_KEY] : [],
+      accounts: getMainnetAccounts(),
       gasPrice: 3000000000,
     },
-    bscTestnet: {
+    bsc_testnet: {
       url: "https://data-seed-prebsc-1-s2.binance.org:8545",
       chainId: 97,
-      accounts: getAccounts(),
+      accounts: getTestnetAccounts(),
       gasPrice: 5000000000,
     },
     // klaytn
     baobab: {
       url: "https://public-en-baobab.klaytn.net",
       chainId: 1001,
-      accounts: getAccounts(),
+      accounts: getTestnetAccounts(),
     },
     cypress: {
       url: "https://public-en-cypress.klaytn.net",
@@ -94,7 +104,7 @@ const config = {
       sepolia: ETHERSCAN_API_KEY,
       bscTestnet: BSCSCAN_API_KEY,
     },
-  },
+  }
 };
 
 export default config

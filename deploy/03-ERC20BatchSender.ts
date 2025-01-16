@@ -13,9 +13,9 @@ const deployFn: DeployFunction = async function (hre) {
   const getUpgradeIndex = () => {
     // In the deployment file, numDeployments: 2 equals upgradeIndex 1.
     // - mainnet: v1
-    // - polygon, bsc, cypress: v2
+    // - polygon, bsc, cypress, soneium: v2
     // Testnet deployment version is not managed.
-    if (chainId === "1") {
+    if (chainId === "1" || chainId === "1868") {
       return 0
     } else {
       return 1

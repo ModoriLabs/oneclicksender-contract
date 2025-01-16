@@ -11,6 +11,8 @@ if [ "$NETWORK" == "mainnet" ]; then
   EXPLORER="https://etherscan.io/address/"
 elif [ "$NETWORK" == "sepolia" ]; then
   EXPLORER="https://sepolia.etherscan.io/address/"
+elif [ "$NETWORK" == "soneium" ]; then
+  EXPLORER="https://soneium.blockscout.com/address/"
 elif [ "$NETWORK" == "polygon" ]; then
   EXPLORER="https://polygonscan.com/address/"
 elif [ "$NETWORK" == "mumbai" ]; then
@@ -33,7 +35,7 @@ else
   echo "Invalid network: $NETWORK"
 fi
 
-yarn hardhat export --network $NETWORK --export temp.json
+bun hardhat export --network $NETWORK --export temp.json
 echo '| Contracts                    | Address                                                                                                                  |'
 echo '|------------------------------|--------------------------------------------------------------------------------------------------------------------------|'
 jq -r ".contracts | to_entries[] | [.key, \"[\(.value.address)]($EXPLORER\(.value.address))\"] | @tsv" temp.json \

@@ -18,6 +18,12 @@ pnpm hardhat deploy --network bsc --tags mainnet
 
 - Fee recipient: 0x509477dc6ab2ee4ee42765a90420da2c2cf2d165
 
+### Verify
+```shell
+# Network with chainId: 1868 not supported. You can specify the url manually via --api-url <url>.
+bun hardhat etherscan-verify --network soneium --api-url https://soneium.blockscout.com/api/
+```
+
 ### Mainnet
 ERC20BatchSenderV1 is deployed. To use WhitelistCostPolicy, use ERC20BatchSenderV2.
 
@@ -25,6 +31,16 @@ ERC20BatchSenderV1 is deployed. To use WhitelistCostPolicy, use ERC20BatchSender
 |------------------|-----------------------------------------------------------------------------------------------------------------------|
 | BasicCostPolicy  | [0xD70b9239a89e6D56ea6661627cb710B98FF100DA](https://etherscan.io/address/0xD70b9239a89e6D56ea6661627cb710B98FF100DA) |
 | ERC20BatchSender | [0xe1bFB3d11890f9b11C046CdEC9f7E7cD7D472238](https://etherscan.io/address/0xe1bFB3d11890f9b11C046CdEC9f7E7cD7D472238) |
+
+### Soneium
+ERC20BatchSenderV1 is deployed. To use WhitelistCostPolicy, use ERC20BatchSenderV2.
+
+| Contracts                    | Address                                                                                                                  |
+|------------------------------|--------------------------------------------------------------------------------------------------------------------------|
+| BasicCostPolicy | [0x347D7fC3A0F1355672b003e92C7077e1FF1D3067](https://soneium.blockscout.com/address/0x347D7fC3A0F1355672b003e92C7077e1FF1D3067) |
+| ERC20BatchSender | [0xD70b9239a89e6D56ea6661627cb710B98FF100DA](https://soneium.blockscout.com/address/0xD70b9239a89e6D56ea6661627cb710B98FF100DA) |
+| WhitelistCostPolicy | [0xCc62a69c927cF4fDce883Bb1f00a0533f29cd104](https://soneium.blockscout.com/address/0xCc62a69c927cF4fDce883Bb1f00a0533f29cd104) |
+
 
 ### BSC
 ERC20BatchSenderV2 is deployed.
@@ -92,8 +108,8 @@ Params
 
 ```shell
 # To dryrun
-pnpm hardhat distribute --network mumbai --file data/MDUS.csv --dryrun --start-id 0 --end-id 2
+bun hardhat distribute --network mumbai --file data/MDUS.csv --dryrun --start-id 0 --end-id 2
 
 # To distribute in real
-pnpm hardhat distribute --network polygon --file data/MDUS.csv --start-id 0 --end-id 0
+bun hardhat distribute --network polygon --file data/MDUS.csv --start-id 0 --end-id 0
 ```

@@ -19,6 +19,10 @@ export const params: params = {
     oneTimeFee: DECIMAL16, // 1 ETH = $2266 => $22.66 = 0.01 ETH
     perUserFee: DECIMAL16,
   },
+  "soneium": {
+    oneTimeFee: DECIMAL16, // 1 ETH = $2266 => $22.66 = 0.01 ETH
+    perUserFee: DECIMAL16,
+  },
   "bsc": {
     oneTimeFee: 8n * DECIMAL16, // 1 BNB = $300 => $24 = 0.08 BNB
     perUserFee: 8n * DECIMAL16,
