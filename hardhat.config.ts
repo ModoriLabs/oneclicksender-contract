@@ -98,6 +98,11 @@ const config = {
       chainId: 8217,
       accounts: MAINNET_PRIVATE_KEY !== undefined ? [MAINNET_PRIVATE_KEY] : [],
     },
+    worldchain: {
+      url: `https://worldchain-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
+      chainId: 480,
+      accounts: getMainnetAccounts(),
+    }
   },
   etherscan: {
     apiKey: {

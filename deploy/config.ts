@@ -46,5 +46,9 @@ export const params: params = {
   "polygon": {
     oneTimeFee: 30n * DECIMAL18,
     perUserFee: 30n * DECIMAL18,
+  },
+  "worldchain": {
+    oneTimeFee: DECIMAL16, // 1 ETH = $2266 => $22.66 = 0.01 ETH
+    perUserFee: DECIMAL16,
   }
 }

@@ -20,3 +20,4 @@ broadcast/*/31337/
 # hardhat
 cache_hardhat/
 artifacts/
+typechain-types/
