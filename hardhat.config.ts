@@ -107,6 +107,11 @@ const config = {
       url: `https://base-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
       chainId: 8453,
       accounts: getMainnetAccounts(),
+    },
+    optimism: {
+      url: `https://opt-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
+      chainId: 10,
+      accounts: getMainnetAccounts(),
     }
   },
   etherscan: {
