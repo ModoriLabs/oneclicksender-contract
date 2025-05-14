@@ -112,6 +112,11 @@ const config = {
       url: `https://opt-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
       chainId: 10,
       accounts: getMainnetAccounts(),
+    },
+    unichain: {
+      url: `https://unichain-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
+      chainId: 130,
+      accounts: getMainnetAccounts(),
     }
   },
   etherscan: {

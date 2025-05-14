@@ -58,5 +58,9 @@ export const params: params = {
   "optimism": {
     oneTimeFee: DECIMAL16, // 1 ETH = $2266 => $22.66 = 0.01 ETH
     perUserFee: DECIMAL16,
+  },
+  "unichain": {
+    oneTimeFee: DECIMAL16, // 1 ETH = $2266 => $22.66 = 0.01 ETH
+    perUserFee: DECIMAL16,
   }
 }
