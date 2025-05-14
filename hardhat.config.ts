@@ -132,6 +132,16 @@ const config = {
       url: `https://zora-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
       chainId: 7777777,
       accounts: getMainnetAccounts(),
+    },
+    shape: {
+      url: `https://shape-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
+      chainId: 360,
+      accounts: getMainnetAccounts(),
+    },
+    settlus: {
+      url: `https://settlus-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
+      chainId: 5371,
+      accounts: getMainnetAccounts(),
     }
   },
   etherscan: {

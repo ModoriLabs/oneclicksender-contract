@@ -48,31 +48,39 @@ export const params: params = {
     perUserFee: 30n * DECIMAL18,
   },
   "worldchain": {
-    oneTimeFee: DECIMAL16, // 1 ETH = $2266 => $22.66 = 0.01 ETH
+    oneTimeFee: DECIMAL16,
     perUserFee: DECIMAL16,
   },
   "base": {
-    oneTimeFee: DECIMAL16, // 1 ETH = $2266 => $22.66 = 0.01 ETH
+    oneTimeFee: DECIMAL16,
     perUserFee: DECIMAL16,
   },
   "optimism": {
-    oneTimeFee: DECIMAL16, // 1 ETH = $2266 => $22.66 = 0.01 ETH
+    oneTimeFee: DECIMAL16,
     perUserFee: DECIMAL16,
   },
   "unichain": {
-    oneTimeFee: DECIMAL16, // 1 ETH = $2266 => $22.66 = 0.01 ETH
+    oneTimeFee: DECIMAL16,
     perUserFee: DECIMAL16,
   },
   "ink": {
-    oneTimeFee: DECIMAL16, // 1 ETH = $2266 => $22.66 = 0.01 ETH
+    oneTimeFee: DECIMAL16,
     perUserFee: DECIMAL16,
   },
   "superseed": {
-    oneTimeFee: DECIMAL16, // 1 ETH = $2266 => $22.66 = 0.01 ETH
+    oneTimeFee: DECIMAL16,
     perUserFee: DECIMAL16,
   },
   "zora": {
-    oneTimeFee: DECIMAL16, // 1 ETH = $2266 => $22.66 = 0.01 ETH
+    oneTimeFee: DECIMAL16,
+    perUserFee: DECIMAL16,
+  },
+  "shape": {
+    oneTimeFee: DECIMAL16,
+    perUserFee: DECIMAL16,
+  },
+  "settlus": {
+    oneTimeFee: DECIMAL16,
     perUserFee: DECIMAL16,
   }
 }
