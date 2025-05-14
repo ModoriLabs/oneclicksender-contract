@@ -117,6 +117,16 @@ const config = {
       url: `https://unichain-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
       chainId: 130,
       accounts: getMainnetAccounts(),
+    },
+    ink: {
+      url: `https://ink-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
+      chainId: 57073,
+      accounts: getMainnetAccounts(),
+    },
+    superseed: {
+      url: `https://superseed-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
+      chainId: 5330,
+      accounts: getMainnetAccounts(),
     }
   },
   etherscan: {
