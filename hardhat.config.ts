@@ -127,6 +127,11 @@ const config = {
       url: `https://superseed-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
       chainId: 5330,
       accounts: getMainnetAccounts(),
+    },
+    zora: {
+      url: `https://zora-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
+      chainId: 7777777,
+      accounts: getMainnetAccounts(),
     }
   },
   etherscan: {

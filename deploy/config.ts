@@ -70,5 +70,9 @@ export const params: params = {
   "superseed": {
     oneTimeFee: DECIMAL16, // 1 ETH = $2266 => $22.66 = 0.01 ETH
     perUserFee: DECIMAL16,
+  },
+  "zora": {
+    oneTimeFee: DECIMAL16, // 1 ETH = $2266 => $22.66 = 0.01 ETH
+    perUserFee: DECIMAL16,
   }
 }
