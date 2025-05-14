@@ -50,5 +50,9 @@ export const params: params = {
   "worldchain": {
     oneTimeFee: DECIMAL16, // 1 ETH = $2266 => $22.66 = 0.01 ETH
     perUserFee: DECIMAL16,
+  },
+  "base": {
+    oneTimeFee: DECIMAL16, // 1 ETH = $2266 => $22.66 = 0.01 ETH
+    perUserFee: DECIMAL16,
   }
 }

@@ -102,6 +102,11 @@ const config = {
       url: `https://worldchain-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
       chainId: 480,
       accounts: getMainnetAccounts(),
+    },
+    base: {
+      url: `https://base-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
+      chainId: 8453,
+      accounts: getMainnetAccounts(),
     }
   },
   etherscan: {
