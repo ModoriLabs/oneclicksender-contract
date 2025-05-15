@@ -21,3 +21,5 @@ broadcast/*/31337/
 cache_hardhat/
 artifacts/
 typechain-types/
+
+pnpm-lock.yaml
