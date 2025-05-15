@@ -147,6 +147,66 @@ const config = {
       url: `https://blast-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
       chainId: 81457,
       accounts: getMainnetAccounts(),
+    },
+    linea: {
+      url: `https://linea-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
+      chainId: 59144,
+      accounts: getMainnetAccounts(),
+    },
+    arbitrum: {
+      url: `https://arb-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
+      chainId: 42161,
+      accounts: getMainnetAccounts(),
+    },
+    arbitrum_nova: {
+      url: `https://arbnova-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
+      chainId: 42170,
+      accounts: getMainnetAccounts(),
+    },
+    scroll: {
+      url: `https://scroll-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
+      chainId: 534352,
+      accounts: getMainnetAccounts(),
+    },
+    berachain: {
+      url: `https://berachain-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
+      chainId: 80094,
+      accounts: getMainnetAccounts(),
+    },
+    ronin: {
+      url: `https://ronin-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`, 
+      chainId: 2020,
+      accounts: getMainnetAccounts(),
+    },
+    gnosis: {
+      url: `https://gnosis-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
+      chainId: 100,
+      accounts: getMainnetAccounts(),
+    },
+    apechain: {
+      url: `https://apechain-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
+      chainId: 33139,
+      accounts: getMainnetAccounts(),
+    },
+    avalanche: {
+      url: `https://avax-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
+      chainId: 43114,
+      accounts: getMainnetAccounts(),
+    },
+    celo: {
+      url: `https://celo-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
+      chainId: 42220,
+      accounts: getMainnetAccounts(),
+    },
+    sonic: {
+      url: `https://sonic-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
+      chainId: 146,
+      accounts: getMainnetAccounts(),
+    },
+    opbnb: {
+      url: `https://opbnb-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
+      chainId: 204,
+      accounts: getMainnetAccounts(),
     }
   },
   etherscan: {

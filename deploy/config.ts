@@ -86,5 +86,53 @@ export const params: params = {
   "blast": {
     oneTimeFee: DECIMAL16,
     perUserFee: DECIMAL16,
+  },
+  "linea": {
+    oneTimeFee: DECIMAL16,
+    perUserFee: DECIMAL16,
+  },
+  "arbitrum": {
+    oneTimeFee: DECIMAL16,
+    perUserFee: DECIMAL16,
+  },
+  "arbitrum_nova": {
+    oneTimeFee: DECIMAL16,
+    perUserFee: DECIMAL16,
+  },
+  "scroll": {
+    oneTimeFee: DECIMAL16,
+    perUserFee: DECIMAL16,
+  },
+  "berachain": {
+    oneTimeFee: 6n * DECIMAL18,
+    perUserFee: 6n * DECIMAL18,
+  },
+  "ronin": {
+    oneTimeFee: 35n * DECIMAL18,
+    perUserFee: 35n * DECIMAL18,
+  },
+  "gnosis": {
+    oneTimeFee: 25n * DECIMAL18,
+    perUserFee: 25n * DECIMAL18,
+  },
+  "apechain": {
+    oneTimeFee: 35n * DECIMAL18,
+    perUserFee: 35n * DECIMAL18,
+  },
+  "avalanche": {
+    oneTimeFee: 1n * DECIMAL18,
+    perUserFee: 1n * DECIMAL18,
+  },
+  "celo": {
+    oneTimeFee: 50n * DECIMAL18,
+    perUserFee: 50n * DECIMAL18,
+  },
+  "sonic": {
+    oneTimeFee: 3900n * DECIMAL18,
+    perUserFee: 3900n * DECIMAL18,
+  },
+  "opbnb": {
+    oneTimeFee: 8n * DECIMAL16,
+    perUserFee: 8n * DECIMAL16,
   }
 }
