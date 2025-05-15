@@ -142,6 +142,11 @@ const config = {
       url: `https://settlus-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
       chainId: 5371,
       accounts: getMainnetAccounts(),
+    },
+    blast: {
+      url: `https://blast-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
+      chainId: 81457,
+      accounts: getMainnetAccounts(),
     }
   },
   etherscan: {

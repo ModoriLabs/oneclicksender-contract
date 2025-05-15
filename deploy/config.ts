@@ -82,5 +82,9 @@ export const params: params = {
   "settlus": {
     oneTimeFee: DECIMAL16,
     perUserFee: DECIMAL16,
+  },
+  "blast": {
+    oneTimeFee: DECIMAL16,
+    perUserFee: DECIMAL16,
   }
 }
