@@ -207,7 +207,17 @@ const config = {
       url: `https://opbnb-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
       chainId: 204,
       accounts: getMainnetAccounts(),
-    }
+    },
+    zksync: {
+      url: `https://zksync-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
+      chainId: 324,
+      accounts: getMainnetAccounts(),
+    },
+    sei: {
+      url: `https://sei-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
+      chainId: 1329,
+      accounts: getMainnetAccounts(),
+    },
   },
   etherscan: {
     apiKey: {

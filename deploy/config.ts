@@ -134,5 +134,13 @@ export const params: params = {
   "opbnb": {
     oneTimeFee: 8n * DECIMAL16,
     perUserFee: 8n * DECIMAL16,
-  }
+  },
+  "zksync": {
+    oneTimeFee: DECIMAL16,
+    perUserFee: DECIMAL16,
+  },
+  "sei": {
+    oneTimeFee: 100n * DECIMAL18,
+    perUserFee: 100n * DECIMAL18,
+  },
 }
