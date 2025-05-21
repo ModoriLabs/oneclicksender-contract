@@ -146,5 +146,9 @@ export const params: params = {
   "hyperevm": {
     oneTimeFee: 8n * DECIMAL16,
     perUserFee: 8n * DECIMAL16,
-  }
+  },
+  "mantle": {
+    oneTimeFee: 30n * DECIMAL18,
+    perUserFee: 30n * DECIMAL18,
+  },
 }

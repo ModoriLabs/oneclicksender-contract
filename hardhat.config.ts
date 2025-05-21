@@ -222,7 +222,12 @@ const config = {
       url: "https://rpc.hyperliquid.xyz/evm",
       chainId: 999,
       accounts: getMainnetAccounts(),
-    }
+    },
+    mantle: {
+      url: `https://mantle-mainnet.g.alchemy.com/v2/${API_KEY_ALCHEMY}`,
+      chainId: 5000,
+      accounts: getMainnetAccounts(),
+    },
   },
   etherscan: {
     apiKey: {
