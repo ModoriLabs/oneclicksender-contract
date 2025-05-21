@@ -143,4 +143,8 @@ export const params: params = {
     oneTimeFee: 100n * DECIMAL18,
     perUserFee: 100n * DECIMAL18,
   },
+  "hyperevm": {
+    oneTimeFee: 8n * DECIMAL16,
+    perUserFee: 8n * DECIMAL16,
+  }
 }

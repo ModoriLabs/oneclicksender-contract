@@ -218,6 +218,11 @@ const config = {
       chainId: 1329,
       accounts: getMainnetAccounts(),
     },
+    hyperevm: {
+      url: "https://rpc.hyperliquid.xyz/evm",
+      chainId: 999,
+      accounts: getMainnetAccounts(),
+    }
   },
   etherscan: {
     apiKey: {
